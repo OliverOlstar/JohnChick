@@ -5,13 +5,13 @@ using UnityEngine;
 //Script for the speeding platforms 
 public class speedingPlatform : MonoBehaviour
 {
-    public Vector3 direction;
-    public int speed;
+    [SerializeField] private Vector3 direction;
+    public float speed = 30f;
+
     // Start is called before the first frame update
     void Start()
     {
         direction.Normalize();
-        
     }
 
     // Update is called once per frame
