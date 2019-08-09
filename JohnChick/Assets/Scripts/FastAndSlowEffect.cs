@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class FastAndSlowEffect : MonoBehaviour
 {
-    [SerializeField] private float timeScale = 1f;
+    public float timeScale = 1f;
     private float minTimeScale = 0;
     private float maxTimeScale = 2;
 
