@@ -112,6 +112,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &8678750 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4834227975268045625, guid: a5f7046ee3eb40d4b8e7da7a78f29faa,
+    type: 3}
+  m_PrefabInstance: {fileID: 778703128}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &102662326 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1188840927775604130, guid: a5f7046ee3eb40d4b8e7da7a78f29faa,
+    type: 3}
+  m_PrefabInstance: {fileID: 778703128}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &111705222 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5153251028007137885, guid: 9c3270c9c198e7a4d9d6a2ac4d1c61c1,
@@ -484,6 +496,11 @@ PrefabInstance:
       objectReference: {fileID: 1250321394}
     - target: {fileID: 4496405404856569811, guid: a5f7046ee3eb40d4b8e7da7a78f29faa,
         type: 3}
+      propertyPath: muzzle.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496405404856569811, guid: a5f7046ee3eb40d4b8e7da7a78f29faa,
+        type: 3}
       propertyPath: bulletsPerSec
       value: 2
       objectReference: {fileID: 0}
@@ -493,8 +510,34 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5082221112435382305, guid: 46a939526265b8741902271295ac600f,
         type: 3}
+    - target: {fileID: 4496405404856569811, guid: a5f7046ee3eb40d4b8e7da7a78f29faa,
+        type: 3}
+      propertyPath: muzzle.Array.data[0]
+      value: 
+      objectReference: {fileID: 3677073682773023968}
+    - target: {fileID: 4496405404856569811, guid: a5f7046ee3eb40d4b8e7da7a78f29faa,
+        type: 3}
+      propertyPath: muzzle.Array.data[1]
+      value: 
+      objectReference: {fileID: 102662326}
+    - target: {fileID: 4496405404856569811, guid: a5f7046ee3eb40d4b8e7da7a78f29faa,
+        type: 3}
+      propertyPath: muzzle.Array.data[2]
+      value: 
+      objectReference: {fileID: 8678750}
+    - target: {fileID: 4496405404856569811, guid: a5f7046ee3eb40d4b8e7da7a78f29faa,
+        type: 3}
+      propertyPath: muzzle.Array.data[3]
+      value: 
+      objectReference: {fileID: 1439182345}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5f7046ee3eb40d4b8e7da7a78f29faa, type: 3}
+--- !u!4 &858563589 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 35693229429140403, guid: ea633ed55a9fb474196b5b9daeeadd4b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1152991391421355657}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &924358160
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -582,7 +625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 564055542447235845, guid: fb987d867e15f2b408a8732e95813574,
     type: 3}
-  muzzle: {fileID: 1347269710}
+  muzzle: []
   forwardForce: 20
   bulletsPerSec: 8
   bulletLife: 2
@@ -617,6 +660,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &1439182345 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2112950068533489766, guid: a5f7046ee3eb40d4b8e7da7a78f29faa,
+    type: 3}
+  m_PrefabInstance: {fileID: 778703128}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1627534040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -721,10 +770,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6421784760308867122, guid: 8351bc461c1ecb34d8eb0c1dcd3af2bf,
         type: 3}
+      propertyPath: muzzle.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421784760308867122, guid: 8351bc461c1ecb34d8eb0c1dcd3af2bf,
+        type: 3}
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 8747432685978493610, guid: 0a79c1a7e7be69c4198f9fe74cdc6f29,
         type: 3}
+    - target: {fileID: 6421784760308867122, guid: 8351bc461c1ecb34d8eb0c1dcd3af2bf,
+        type: 3}
+      propertyPath: muzzle.Array.data[0]
+      value: 
+      objectReference: {fileID: 1456229718424761375}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8351bc461c1ecb34d8eb0c1dcd3af2bf, type: 3}
 --- !u!1 &1665369592 stripped
@@ -1023,7 +1082,7 @@ PrefabInstance:
     - target: {fileID: 393189783691336932, guid: 957fdcd2064e16c4887f96355bc27937,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 393189783691336932, guid: 957fdcd2064e16c4887f96355bc27937,
         type: 3}
@@ -1092,7 +1151,7 @@ PrefabInstance:
     - target: {fileID: 1152991391245805358, guid: ea633ed55a9fb474196b5b9daeeadd4b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1152991391245805358, guid: ea633ed55a9fb474196b5b9daeeadd4b,
         type: 3}
@@ -1154,6 +1213,16 @@ PrefabInstance:
       propertyPath: viewAngle
       value: 88.8
       objectReference: {fileID: 0}
+    - target: {fileID: 902090849006318149, guid: ea633ed55a9fb474196b5b9daeeadd4b,
+        type: 3}
+      propertyPath: muzzle.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 902090849006318149, guid: ea633ed55a9fb474196b5b9daeeadd4b,
+        type: 3}
+      propertyPath: muzzle.Array.data[0]
+      value: 
+      objectReference: {fileID: 858563589}
     - target: {fileID: 35693229429140403, guid: ea633ed55a9fb474196b5b9daeeadd4b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1176,6 +1245,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea633ed55a9fb474196b5b9daeeadd4b, type: 3}
+--- !u!4 &1456229718424761375 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1456229718424761375, guid: 8351bc461c1ecb34d8eb0c1dcd3af2bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1627534040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3677073682773023968 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3677073682773023968, guid: a5f7046ee3eb40d4b8e7da7a78f29faa,
+    type: 3}
+  m_PrefabInstance: {fileID: 778703128}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5153251028033883867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1226,7 +1307,7 @@ PrefabInstance:
     - target: {fileID: 5153251028941471376, guid: 9c3270c9c198e7a4d9d6a2ac4d1c61c1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5153251028941471376, guid: 9c3270c9c198e7a4d9d6a2ac4d1c61c1,
         type: 3}
