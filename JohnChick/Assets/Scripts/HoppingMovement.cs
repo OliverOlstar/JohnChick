@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class HoppingMovement : MonoBehaviour
 {
@@ -8,13 +9,17 @@ public class HoppingMovement : MonoBehaviour
     [SerializeField] private float tipAmount = 20f;
     [SerializeField] private float tipSpeed = 40f;
     [SerializeField] private float returnTipSpeed = 50f;
-    [SerializeField] private Vector3 targetTip;
+    private Vector3 targetTip;
 
+    [Space]
     [SerializeField] private float jumpHeight = 5f;
     [SerializeField] private float rayCastDistance = 1f;
     private Rigidbody _rb;
 
-    public float speed = 1;
+    [Space]
+    [SerializeField] private Rigidbody speedSourceRb;
+    [SerializeField] private NavMeshAgent speedSourceNav;
+    [HideInInspector] public float speed = 1;
 
     void Start()
     {
@@ -24,6 +29,24 @@ public class HoppingMovement : MonoBehaviour
     
     void Update()
     {
+        // Get Speed ///
+        if (speedSourceNav)
+        {
+            if (!speedSourceNav.isStopped)
+                speed = speedSourceNav.speed;
+            else
+                speed = 0;
+        }
+        else if (speedSourceRb)
+        {
+            speed = speedSourceRb.velocity.magnitude / 5;
+        }
+        else
+        {
+            speed = 1;
+        }
+
+        ////////////////
         if (speed <= 0.1f)
         {
             if (transform.rotation.eulerAngles.z >= 180)
@@ -89,7 +112,6 @@ public class HoppingMovement : MonoBehaviour
             if (Physics.Raycast(transform.position, Vector3.down, rayCastDistance))
             {
                 _rb.velocity = Vector3.up * jumpHeight * (speed/2 + 0.5f);
-                Debug.Log("Called");
             }
         }
     }
