@@ -281,7 +281,7 @@ MonoBehaviour:
   tipAmount: 15
   tipSpeed: 45
   returnTipSpeed: 65
-  jumpHeight: 4
+  jumpHeight: 2.5
   rayCastDistance: 0.65
   speedSourceRb: {fileID: 7311742414718083475}
   speedSourceNav: {fileID: 0}
@@ -353,6 +353,7 @@ MonoBehaviour:
   maxSpeed: 6
   jumpForce: 500
   rayDistance: 0.3
+  _rb: {fileID: 0}
 --- !u!54 &7311742414718083475
 Rigidbody:
   m_ObjectHideFlags: 0
