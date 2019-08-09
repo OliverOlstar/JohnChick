@@ -26,13 +26,19 @@ public class FieldOfView : MonoBehaviour {
 
 	NavMeshAgent nma;
 	float origSpeed;
+	private Shooting shootscript;
+	bool shootit = false;
+	bool loopy = false;
 
 	void Start() {
 		viewMesh = new Mesh ();
 		viewMesh.name = "View Mesh";
 		viewMeshFilter.mesh = viewMesh;
+
 		nma = GetComponent<NavMeshAgent>();
 		origSpeed = nma.speed;
+
+		shootscript = GetComponent<Shooting>();
 
 		StartCoroutine ("FindTargetsWithDelay", .2f);
 	}
@@ -198,11 +204,23 @@ public class FieldOfView : MonoBehaviour {
 		nma.speed = 0;
 		nma.isStopped = true;
 		
+		shootit = true;
+		if (shootit && !loopy)
+		{
+			shootscript.StartShooting();
+			loopy = true;
+		}
+		//shootscript.StartShooting();
+
 	}
 
 	public void targetNotFound()
 	{
 		nma.isStopped = false;
 		nma.speed = origSpeed;
+		shootit = false;
+		
+		shootscript.StopShooting();
+		loopy = false;
 	}
 }
