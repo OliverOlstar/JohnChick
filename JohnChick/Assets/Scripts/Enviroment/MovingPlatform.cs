@@ -6,18 +6,22 @@ public class MovingPlatform : MonoBehaviour
 {
     private bool is_Moving = true;
     private int currentTarget = 2;
-    public float waitToGoBack;
     private Transform[] childPositions;         //array of children
-    [SerializeField] private Transform movingPlatform;     // private prefab
+    private Transform movingPlatform;     // private prefab
     private int moveDirection = 1;
+
     [SerializeField] private bool pingPong = false;
+
+    [Space]
+    public float waitToGoBack;
+    public float platformSpeed = 4f;
     
-    public float distance;
     private float distanceTo;
     // Start is called before the first frame update
     void Start()
     {
         childPositions = GetComponentsInChildren<Transform>();
+        movingPlatform = childPositions[1];
     }
 
     // Update is called once per frame
@@ -25,7 +29,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (is_Moving)
         {
-            movingPlatform.position = Vector3.MoveTowards(movingPlatform.position, childPositions[currentTarget].position, distance * Time.deltaTime);
+            movingPlatform.position = Vector3.MoveTowards(movingPlatform.position, childPositions[currentTarget].position, platformSpeed * Time.deltaTime);
             
             distanceTo = Vector3.Distance(movingPlatform.position, childPositions[currentTarget].position);
             if (distanceTo <= 0.1f)
