@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7754330428255545199}
   - component: {fileID: 7754330428255545198}
   - component: {fileID: 7754330428255545197}
-  - component: {fileID: 4933542021597186780}
+  - component: {fileID: 7563255772074388005}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -92,7 +92,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4933542021597186780
+--- !u!114 &7563255772074388005
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 10039
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1

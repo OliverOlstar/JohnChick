@@ -12,11 +12,12 @@ GameObject:
   - component: {fileID: 1152991391245805359}
   - component: {fileID: 1152991391245805356}
   - component: {fileID: 1152991391245805357}
-  - component: {fileID: 1152991391245805354}
   - component: {fileID: 1152991391245805345}
   - component: {fileID: 1152991391245805347}
   - component: {fileID: 1152991391245805344}
   - component: {fileID: 902090849006318149}
+  - component: {fileID: 291271809551375962}
+  - component: {fileID: 5338976191984767750}
   m_Layer: 12
   m_Name: Enemy(PIG)
   m_TagString: Untagged
@@ -99,28 +100,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!195 &1152991391245805354
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1152991391245805355}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5000001
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!114 &1152991391245805345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +126,7 @@ MonoBehaviour:
   edgeDstThreshold: 15
   maskCutawayDst: 0.1
   viewMeshFilter: {fileID: 1152991391915305712}
+  enemyattacks: {fileID: 0}
 --- !u!54 &1152991391245805347
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -203,6 +183,41 @@ MonoBehaviour:
   bulletsPerSec: 0.33
   bulletLife: 4
   bulletSize: 1
+--- !u!195 &291271809551375962
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152991391245805355}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5000001
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &5338976191984767750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152991391245805355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83f63f78cd48f9d4ba53aa5506b3bc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seen: 0
 --- !u!1 &1152991391915305713
 GameObject:
   m_ObjectHideFlags: 0
