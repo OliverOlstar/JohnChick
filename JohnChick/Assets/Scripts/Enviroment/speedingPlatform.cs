@@ -11,6 +11,5 @@ public class speedingPlatform : MonoBehaviour
     {
         if (!other.CompareTag("PlayerBullet"))
             other.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * speed); //add force in a direction
-            
     }
 }
