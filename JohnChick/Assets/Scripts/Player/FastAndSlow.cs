@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class FastAndSlow : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float fastAndSlowScale = 1;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        FastAndSlowEffect fastAndSlowEffect = other.gameObject.GetComponent<FastAndSlowEffect>();
+
+        if (fastAndSlowEffect)
+        {
+            fastAndSlowEffect.NewTimeScale(fastAndSlowScale);
+        }
+
+        if (!other.CompareTag("Player") && !other.CompareTag("EnviromentCollider"))
+            Destroy(this.gameObject);
     }
 }

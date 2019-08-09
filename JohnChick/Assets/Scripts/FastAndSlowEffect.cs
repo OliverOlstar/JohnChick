@@ -5,14 +5,18 @@ using UnityEngine.AI;
 
 public class FastAndSlowEffect : MonoBehaviour
 {
-    public float timeScale = 1f;
+    [SerializeField] private float timeScale = 1f;
     private float minTimeScale = 0;
+    private float maxTimeScale = 2;
+
+    private float alreadyCalled = 0;
 
     [Header("Fill in Applicable")]
     [SerializeField] private Rigidbody rigidbody;
     [SerializeField] private NavMeshAgent navMeshAgent;
     [SerializeField] private MovingPlatform movingPlatform;
     [SerializeField] private speedingPlatform speedingPlatform;
+    [SerializeField] private Fan fan;
 
     private Vector3 DefaultVelocity;
 
@@ -22,6 +26,8 @@ public class FastAndSlowEffect : MonoBehaviour
     private float DefaultplatformSpeed;
 
     private float DefaultSpeedPlatform;
+
+    private float DefaultFanSpeed;
 
     private void Start()
     {
@@ -45,11 +51,24 @@ public class FastAndSlowEffect : MonoBehaviour
             DefaultWaitToGoBack = movingPlatform.waitToGoBack;
             DefaultplatformSpeed = movingPlatform.platformSpeed;
         }
+
+        if (fan)
+        {
+            DefaultFanSpeed = fan.speed;
+        }
     }
 
     public void NewTimeScale(float pTimeChange)
     {
-        timeScale = Mathf.Max(timeScale + pTimeChange, minTimeScale);
+        //Protects from calling it twice on the same frame
+        if (Time.time == alreadyCalled)
+            return;
+        else
+            alreadyCalled = Time.time;
+
+
+
+        timeScale = Mathf.Clamp(timeScale + pTimeChange, minTimeScale, maxTimeScale);
 
         if (rigidbody)
         {
@@ -68,8 +87,14 @@ public class FastAndSlowEffect : MonoBehaviour
 
         if (movingPlatform)
         {
-            movingPlatform.waitToGoBack = DefaultWaitToGoBack * timeScale;
+            movingPlatform.waitToGoBack = DefaultWaitToGoBack / timeScale;
             movingPlatform.platformSpeed = DefaultplatformSpeed * timeScale;
+        }
+
+        if (fan)
+        {
+            fan.speed = DefaultFanSpeed * (timeScale + 0.1f);
+            fan.changeSize((int)timeScale);
         }
     }
 }
