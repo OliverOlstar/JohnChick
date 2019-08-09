@@ -205,9 +205,10 @@ public class FieldOfView : MonoBehaviour {
 		nma.isStopped = true;
 		
 		shootit = true;
-		if (!loopy)
+		if (shootit && !loopy)
 		{
-			shootem();
+			shootscript.StartShooting();
+			loopy = true;
 		}
 		//shootscript.StartShooting();
 
@@ -218,24 +219,8 @@ public class FieldOfView : MonoBehaviour {
 		nma.isStopped = false;
 		nma.speed = origSpeed;
 		shootit = false;
-		if (loopy)
-		{
-			shootem();
-		}
-		//shootscript.StopShooting();
-	}
-
-	public void shootem()
-	{
-		if (shootit&&!loopy)
-		{
-			shootscript.StartShooting();
-			loopy = true;
-		}
-		else if(!shootit && loopy)
-		{
-			shootscript.StopShooting();
-			loopy = false;
-		}
+		
+		shootscript.StopShooting();
+		loopy = false;
 	}
 }
