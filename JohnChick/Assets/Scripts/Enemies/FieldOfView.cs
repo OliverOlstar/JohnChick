@@ -8,7 +8,9 @@ public class FieldOfView : MonoBehaviour {
 	public float viewRadius;
 	public float agroLostRadius;
 	[Range(0,360)]
-	public float viewAngle;
+	public float visibleViewAngle;
+	[Range(0, 360)]
+	public float actualViewAngle;
 
 	public LayerMask targetMask;
 	public LayerMask obstacleMask;
@@ -36,6 +38,9 @@ public class FieldOfView : MonoBehaviour {
 
 	private void Update()
 	{
+
+		visibleViewAngle = actualViewAngle - 2;
+
 		if (enemyattacks.seen == false)
 			FindVisibleTargets();
 		else
@@ -65,7 +70,7 @@ public class FieldOfView : MonoBehaviour {
 			target = targetsInViewRadius [i].transform;
 			Vector3 dirToTarget = (target.position - transform.position).normalized;
 
-			if (Vector3.Angle (transform.forward, dirToTarget) < viewAngle / 2)
+			if (Vector3.Angle (transform.forward, dirToTarget) < actualViewAngle / 2)
 			{
 				float dstToTarget = Vector3.Distance (transform.position, target.position);
 
@@ -81,12 +86,12 @@ public class FieldOfView : MonoBehaviour {
 	}
 
 	void DrawFieldOfView() {
-		int stepCount = Mathf.RoundToInt(viewAngle * meshResolution);
-		float stepAngleSize = viewAngle / stepCount;
+		int stepCount = Mathf.RoundToInt(visibleViewAngle * meshResolution);
+		float stepAngleSize = visibleViewAngle / stepCount;
 		List<Vector3> viewPoints = new List<Vector3> ();
 		ViewCastInfo oldViewCast = new ViewCastInfo ();
 		for (int i = 0; i <= stepCount; i++) {
-			float angle = transform.eulerAngles.y - viewAngle / 2 + stepAngleSize * i;
+			float angle = transform.eulerAngles.y - visibleViewAngle / 2 + stepAngleSize * i;
 			ViewCastInfo newViewCast = ViewCast (angle);
 
 			if (i > 0) {

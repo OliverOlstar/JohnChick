@@ -141,7 +141,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewRadius: 9
   agroLostRadius: 10
-  viewAngle: 90
+  visibleViewAngle: 90
+  actualViewAngle: 90
   targetMask:
     serializedVersion: 2
     m_Bits: 2048
