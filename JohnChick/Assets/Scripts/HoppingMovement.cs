@@ -115,8 +115,7 @@ public class HoppingMovement : MonoBehaviour
                 _rb.velocity = newVelocity;
             }
         }
-
-
+        
         transform.localPosition = new Vector3(transform.localPosition.x, Mathf.Clamp(transform.localPosition.y, 0, jumpHeight), transform.localPosition.z);
     }
 }
