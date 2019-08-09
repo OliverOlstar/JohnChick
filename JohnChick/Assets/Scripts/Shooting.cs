@@ -15,8 +15,11 @@ public class Shooting : MonoBehaviour
     [SerializeField] private float bulletLife;
     [SerializeField] private float bulletSize;
 
-    public void StartShooting()
+    public void StartShooting(GameObject pPrefab = null)
     {
+        if (pPrefab != null)
+            bulletPrefab = pPrefab;
+
         StartCoroutine("meShooting");
     }
 
@@ -33,6 +36,7 @@ public class Shooting : MonoBehaviour
             bullet.transform.position = muzzle.position;
             bullet.transform.forward = muzzle.forward;
             bullet.transform.localScale *= bulletSize;
+
             bullet.GetComponent<Rigidbody>().AddForce(new Vector3(transform.forward.x * forwardForce, 0, transform.forward.z * forwardForce), ForceMode.Impulse);
             Destroy(bullet, bulletLife);
 
