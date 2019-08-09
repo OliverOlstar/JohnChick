@@ -6,6 +6,7 @@ public class HighlightObject : MonoBehaviour
     public float animationTime = 1f;
     public float threshold = 1.5f;
 
+    private bool is_mouseover;
     private FastAndSlowEffect fastSlowEffect;
     private HighlightController controller;
     private Material material;
@@ -13,6 +14,7 @@ public class HighlightObject : MonoBehaviour
     private Color selectedColor;
     private Color fastColor;
     private Color slowColor;
+
     
     void Awake()
     {
@@ -21,9 +23,9 @@ public class HighlightObject : MonoBehaviour
 
         normalColor = material.color;
         selectedColor = new Color(
-            Mathf.Clamp01(normalColor.r * threshold),
+            Mathf.Clamp01(normalColor.r * threshold*-1),
             Mathf.Clamp01(normalColor.g * threshold),
-            Mathf.Clamp01(normalColor.b * threshold));
+            Mathf.Clamp01(normalColor.b * threshold*-1));
         fastColor = new Color(
             Mathf.Clamp01(normalColor.r * (threshold * 2)),
             Mathf.Clamp01(normalColor.g * (threshold * -1 / 2)),
@@ -41,8 +43,9 @@ public class HighlightObject : MonoBehaviour
             FastHighlight();
         if (fastSlowEffect.timeScale < 1)
             SlowHighlight();
-        if (fastSlowEffect.timeScale == 1)
+        if (fastSlowEffect.timeScale == 1 && !is_mouseover)
             StopHighlight();
+
     }
 
     public void StartHighlight()
@@ -62,7 +65,17 @@ public class HighlightObject : MonoBehaviour
 
     private void OnMouseOver()
     {
-        controller.SelectObj(this);
+        if (fastSlowEffect.timeScale == 1)
+        {
+            controller.SelectObj(this);
+            is_mouseover = true;
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        StopHighlight();
+        is_mouseover = false;
     }
 
     public void FastHighlight()
