@@ -452,6 +452,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8786549785272346720, guid: a5f7046ee3eb40d4b8e7da7a78f29faa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d82398a15eb110a48b9a96de69f55326, type: 2}
     - target: {fileID: 7798227019742955986, guid: a5f7046ee3eb40d4b8e7da7a78f29faa,
         type: 3}
       propertyPath: _patrolPoints.Array.data[0]
@@ -482,6 +487,12 @@ PrefabInstance:
       propertyPath: bulletsPerSec
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4496405404856569811, guid: a5f7046ee3eb40d4b8e7da7a78f29faa,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5082221112435382305, guid: 46a939526265b8741902271295ac600f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5f7046ee3eb40d4b8e7da7a78f29faa, type: 3}
 --- !u!65 &924358160
@@ -673,6 +684,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5649492496738694627, guid: 8351bc461c1ecb34d8eb0c1dcd3af2bf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b1ba8bc9270555a46be9ac0567f320e6, type: 2}
     - target: {fileID: 7656796282591287379, guid: 8351bc461c1ecb34d8eb0c1dcd3af2bf,
         type: 3}
       propertyPath: _patrolPoints.Array.data[0]
@@ -698,6 +714,17 @@ PrefabInstance:
       propertyPath: _patrolPoints.Array.data[4]
       value: 
       objectReference: {fileID: 1250321394}
+    - target: {fileID: 7656796282591287379, guid: 8351bc461c1ecb34d8eb0c1dcd3af2bf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421784760308867122, guid: 8351bc461c1ecb34d8eb0c1dcd3af2bf,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 8747432685978493610, guid: 0a79c1a7e7be69c4198f9fe74cdc6f29,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8351bc461c1ecb34d8eb0c1dcd3af2bf, type: 3}
 --- !u!1 &1665369592 stripped
