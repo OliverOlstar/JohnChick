@@ -6,14 +6,14 @@ using UnityEngine.AI;
 public class FieldOfView : MonoBehaviour {
 
 	public float viewRadius;
+	public float agroLostRadius;
 	[Range(0,360)]
 	public float viewAngle;
 
 	public LayerMask targetMask;
 	public LayerMask obstacleMask;
 
-	[HideInInspector]
-	public List<Transform> visibleTargets = new List<Transform>();
+	[SerializeField] private Transform target;
 
 	public float meshResolution;
 	public int edgeResolveIterations;
@@ -32,48 +32,48 @@ public class FieldOfView : MonoBehaviour {
 		viewMeshFilter.mesh = viewMesh;
 
 		enemyattacks = GetComponent<EnemyAttack>();
-
-		StartCoroutine ("FindTargetsWithDelay",0f);
 	}
 
-
-	IEnumerator FindTargetsWithDelay(float delay) {
-		while (true) {
-			//yield return new WaitForSeconds (delay);
+	private void Update()
+	{
+		if (enemyattacks.seen == false)
 			FindVisibleTargets();
-			yield return null;
+		else
+		{
+			transform.LookAt(target);
+
+			if (Vector3.Distance(target.position, transform.position) > agroLostRadius)
+			{
+				Debug.Log("Lost Player");
+				enemyattacks.seen = false;
+				enemyattacks.targetNotFound();
+			}
 		}
 	}
 
-	void LateUpdate() {
+	void LateUpdate()
+	{
 		DrawFieldOfView ();
 	}
 
-	void FindVisibleTargets() {
-		visibleTargets.Clear ();
+	void FindVisibleTargets()
+	{
 		Collider[] targetsInViewRadius = Physics.OverlapSphere (transform.position, viewRadius, targetMask);
 
-		for (int i = 0; i < targetsInViewRadius.Length; i++) {
-			Transform target = targetsInViewRadius [i].transform;
+		for (int i = 0; i < targetsInViewRadius.Length; i++)
+		{
+			target = targetsInViewRadius [i].transform;
 			Vector3 dirToTarget = (target.position - transform.position).normalized;
-			if (Vector3.Angle (transform.forward, dirToTarget) < viewAngle / 2) {
+
+			if (Vector3.Angle (transform.forward, dirToTarget) < viewAngle / 2)
+			{
 				float dstToTarget = Vector3.Distance (transform.position, target.position);
-				if (!Physics.Raycast (transform.position, dirToTarget, dstToTarget, obstacleMask)&& target.CompareTag("Player")) {
-					visibleTargets.Add(target);
-					Debug.Log(target.tag);
-					if (target.CompareTag("Player") && dstToTarget <= viewRadius )
-					{
-						transform.LookAt(target);
-						enemyattacks.seen = true;
-						visibleTargets.Remove(target);
-					}
 
-					else 
-					{
-						enemyattacks.seen = false;
-
-					}
-
+				if (!Physics.Raycast (transform.position, dirToTarget, dstToTarget, obstacleMask) && target.CompareTag("Player"))
+				{
+					Debug.Log("Found Player");
+					enemyattacks.seen = true;
+					enemyattacks.targetFound();
 				}
 				
 			}
