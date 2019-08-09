@@ -29,7 +29,7 @@ public class HoppingMovement : MonoBehaviour
     
     void Update()
     {
-        // Get Speed ///
+        //Get Speed
         if (speedSourceNav)
         {
             if (!speedSourceNav.isStopped)
@@ -39,14 +39,14 @@ public class HoppingMovement : MonoBehaviour
         }
         else if (speedSourceRb)
         {
-            speed = speedSourceRb.velocity.magnitude / 5;
+            speed = new Vector2(speedSourceRb.velocity.x, speedSourceRb.velocity.z).magnitude / 5;
         }
         else
         {
             speed = 1;
         }
 
-        ////////////////
+        //Switch TargetTip
         if (speed <= 0.1f)
         {
             if (transform.rotation.eulerAngles.z >= 180)
@@ -111,8 +111,12 @@ public class HoppingMovement : MonoBehaviour
         {
             if (Physics.Raycast(transform.position, Vector3.down, rayCastDistance))
             {
-                _rb.velocity = Vector3.up * jumpHeight * (speed/2 + 0.5f);
+                Vector3 newVelocity = Vector3.up * jumpHeight * (speed / 2 + 0.5f);
+                _rb.velocity = newVelocity;
             }
         }
+
+
+        transform.localPosition = new Vector3(transform.localPosition.x, Mathf.Clamp(transform.localPosition.y, 0, jumpHeight), transform.localPosition.z);
     }
 }

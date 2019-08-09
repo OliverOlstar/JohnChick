@@ -11,14 +11,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float rayDistance = 0.2f;
 
-    private Rigidbody _rb;
+    [SerializeField] private Rigidbody _rb;
 
     private bool OnGround = true;
-
-    void Start()
-    {
-        _rb = GetComponent<Rigidbody>();
-    }
 
     void Update()
     {
@@ -29,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnGroundCheck()
     {
-        OnGround = (Physics.Raycast(transform.position, Vector3.down, rayDistance));
+        OnGround = (Physics.Raycast(new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), Vector3.down, rayDistance));
     }
 
     void Move()
