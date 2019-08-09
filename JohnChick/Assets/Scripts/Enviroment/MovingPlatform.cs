@@ -13,8 +13,8 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField] private bool pingPong = false;
 
     [Space]
-    [SerializeField] private float waitToGoBack;
-    [SerializeField] private float platformSpeed = 4f;
+    public float waitToGoBack;
+    public float platformSpeed = 4f;
     
     private float distanceTo;
     // Start is called before the first frame update
