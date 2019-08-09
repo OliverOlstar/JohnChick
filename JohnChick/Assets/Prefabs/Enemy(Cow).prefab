@@ -191,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _patrolWaiting: 1
   _totalWaitTime: 1.5
-  _switchProbability: 0.2
+  _switchProbability: 0.12
   _patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
