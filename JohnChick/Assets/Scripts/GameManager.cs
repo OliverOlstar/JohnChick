@@ -53,6 +53,24 @@ public class GameManager : MonoBehaviour
                 NextLevel();
             }
         }
+        if (SceneManager.GetActiveScene().name == "Title Screen")
+        {
+            Button[] buttons = FindObjectOfType<Canvas>().GetComponentsInChildren<Button>();
+            buttons[0].onClick.AddListener(StartGame);
+            buttons[1].onClick.AddListener(QuitGame);
+        }
+        if (SceneManager.GetActiveScene().name == "Failed")
+        {
+            Button[] buttons = FindObjectOfType<Canvas>().GetComponentsInChildren<Button>();
+            buttons[0].onClick.AddListener(Respawn);
+            buttons[1].onClick.AddListener(QuitGame);
+        }
+        else if (SceneManager.GetActiveScene().name == "End Game")
+        {
+            Button[] buttons = FindObjectOfType<Canvas>().GetComponentsInChildren<Button>();
+            buttons[0].onClick.AddListener(ToTitle);
+            buttons[1].onClick.AddListener(QuitGame);
+        }
     }
     public static GameManager instance
     {
@@ -62,6 +80,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        currentLevel = 1;
         SceneManager.LoadScene("Level1");
     }
 
@@ -111,6 +130,11 @@ public class GameManager : MonoBehaviour
                 // Update HUD on every score change
                 scoreText.text = "Score: " + score;
         }
+    }
+
+    public void ToTitle()
+    {
+        SceneManager.LoadScene("Title Screen");
     }
 
 }
