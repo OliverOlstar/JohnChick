@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerAiming : MonoBehaviour
 {
     private Shooting _shooting;
+    [SerializeField] private GameObject slowBullet;
+    [SerializeField] private GameObject fastBullet;
+
 
     void Start()
     {
@@ -17,11 +20,21 @@ public class PlayerAiming : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            _shooting.StartShooting();
+            _shooting.StopShooting();
+            _shooting.StartShooting(fastBullet);
         }
-        else if (Input.GetButtonUp("Fire1"))
+        else if (Input.GetButtonDown("Fire2"))
         {
             _shooting.StopShooting();
+            _shooting.StartShooting(slowBullet);
+        }
+
+        if (!Input.GetButton("Fire1") && !Input.GetButton("Fire2"))
+        {
+            if (Input.GetButtonUp("Fire1") || Input.GetButtonUp("Fire2"))
+            {
+                _shooting.StopShooting();
+            }
         }
     }
 
