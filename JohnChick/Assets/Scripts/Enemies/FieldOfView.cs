@@ -24,24 +24,24 @@ public class FieldOfView : MonoBehaviour {
 	public MeshFilter viewMeshFilter;
 	Mesh viewMesh;
 
-	NavMeshAgent nma;
-	float origSpeed;
+	public EnemyAttack enemyattacks;
 
 	void Start() {
 		viewMesh = new Mesh ();
 		viewMesh.name = "View Mesh";
 		viewMeshFilter.mesh = viewMesh;
-		nma = GetComponent<NavMeshAgent>();
-		origSpeed = nma.speed;
 
-		StartCoroutine ("FindTargetsWithDelay", .2f);
+		enemyattacks = GetComponent<EnemyAttack>();
+
+		StartCoroutine ("FindTargetsWithDelay",0f);
 	}
 
 
 	IEnumerator FindTargetsWithDelay(float delay) {
 		while (true) {
-			yield return new WaitForSeconds (delay);
+			//yield return new WaitForSeconds (delay);
 			FindVisibleTargets();
+			yield return null;
 		}
 	}
 
@@ -58,19 +58,24 @@ public class FieldOfView : MonoBehaviour {
 			Vector3 dirToTarget = (target.position - transform.position).normalized;
 			if (Vector3.Angle (transform.forward, dirToTarget) < viewAngle / 2) {
 				float dstToTarget = Vector3.Distance (transform.position, target.position);
-				if (!Physics.Raycast (transform.position, dirToTarget, dstToTarget, obstacleMask)) {
-					visibleTargets.Add (target);
-					if (target.tag == "Player")
+				if (!Physics.Raycast (transform.position, dirToTarget, dstToTarget, obstacleMask)&& target.CompareTag("Player")) {
+					visibleTargets.Add(target);
+					Debug.Log(target.tag);
+					if (target.CompareTag("Player") && dstToTarget <= viewRadius )
 					{
-						targetFound();
 						transform.LookAt(target);
-						break;
+						enemyattacks.seen = true;
+						visibleTargets.Remove(target);
 					}
-					else
+
+					else 
 					{
-						targetNotFound();
+						enemyattacks.seen = false;
+
 					}
+
 				}
+				
 			}
 		}
 	}
@@ -192,17 +197,5 @@ public class FieldOfView : MonoBehaviour {
 		}
 	}
 
-	public void targetFound()
-	{
-		Debug.Log("Target Found!");
-		nma.speed = 0;
-		nma.isStopped = true;
-		
-	}
-
-	public void targetNotFound()
-	{
-		nma.isStopped = false;
-		nma.speed = origSpeed;
-	}
+	
 }

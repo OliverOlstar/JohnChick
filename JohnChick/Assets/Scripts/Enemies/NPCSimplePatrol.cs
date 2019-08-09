@@ -92,7 +92,7 @@ public class NPCSimplePatrol : MonoBehaviour
 		}
     }
  
-	private void SetDestination()
+	public void SetDestination()
 	{
 		if (_patrolPoints != null)
 		{
