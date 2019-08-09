@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 902090849006318149}
   - component: {fileID: 5338976191984767750}
   - component: {fileID: 8630018065853727011}
-  - component: {fileID: 7670065937903049942}
   m_Layer: 12
   m_Name: Enemy(PIG)
   m_TagString: Untagged
@@ -113,21 +112,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e46aac6a47a82954cb8858de50ae6989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 15
-  viewAngle: 45
+  viewRadius: 9
+  agroLostRadius: 10
+  visibleViewAngle: 90
+  actualViewAngle: 90
   targetMask:
     serializedVersion: 2
     m_Bits: 2048
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 8192
-  visibleTargets: []
+    m_Bits: 9239
+  target: {fileID: 0}
   meshResolution: 1
   edgeResolveIterations: 36
-  edgeDstThreshold: 15
+  edgeDstThreshold: 25
   maskCutawayDst: 0.1
   viewMeshFilter: {fileID: 1152991391915305712}
-  enemyattacks: {fileID: 0}
+  enemyattacks: {fileID: 5338976191984767750}
 --- !u!54 &1152991391245805347
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -158,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _patrolWaiting: 1
   _totalWaitTime: 1.5
-  _switchProbability: 0.2
+  _switchProbability: 0.12
   _patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -180,7 +181,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3533646088721872925, guid: 95fbda30e6e527a4183102621b720e3d,
     type: 3}
   muzzle:
-  - {fileID: 0}
+  - {fileID: 35693229429140403}
   forwardForce: 15
   bulletsPerSec: 0.33
   bulletLife: 4
@@ -220,21 +221,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &7670065937903049942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1152991391245805355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb410568653473f49b900f94448dc2a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resilience: 2
-  isEnemy: 1
-  gameManager: {fileID: 0}
 --- !u!1 &1152991391915305713
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +322,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8019451286266613730}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.239, y: 0.69, z: 0.077}
+  m_LocalPosition: {x: -0.14, y: 0.57, z: 1.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1152991391245805358}
