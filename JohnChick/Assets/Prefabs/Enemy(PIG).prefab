@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 1152991391245805347}
   - component: {fileID: 1152991391245805344}
   - component: {fileID: 902090849006318149}
-  - component: {fileID: 291271809551375962}
   - component: {fileID: 5338976191984767750}
+  - component: {fileID: 8630018065853727011}
   m_Layer: 12
   m_Name: Enemy(PIG)
   m_TagString: Untagged
@@ -183,7 +183,20 @@ MonoBehaviour:
   bulletsPerSec: 0.33
   bulletLife: 4
   bulletSize: 1
---- !u!195 &291271809551375962
+--- !u!114 &5338976191984767750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152991391245805355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83f63f78cd48f9d4ba53aa5506b3bc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seen: 0
+--- !u!195 &8630018065853727011
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,19 +218,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5338976191984767750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1152991391245805355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83f63f78cd48f9d4ba53aa5506b3bc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seen: 0
 --- !u!1 &1152991391915305713
 GameObject:
   m_ObjectHideFlags: 0

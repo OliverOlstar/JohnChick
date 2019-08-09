@@ -8,6 +8,7 @@ public class EnemyAttack : MonoBehaviour
 	NavMeshAgent nma;
 	float origSpeed;
 	private Shooting shootscript;
+	private NPCSimplePatrol npcsp;
 	bool shootit = false;
 	bool loopy = false;
 	public bool seen;
@@ -43,6 +44,7 @@ public class EnemyAttack : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
+		npcsp = GetComponent<NPCSimplePatrol>();
 		nma = GetComponent<NavMeshAgent>();
 		origSpeed = nma.speed;
 
@@ -69,6 +71,7 @@ public class EnemyAttack : MonoBehaviour
 			targetNotFound();
 			nma.isStopped = false;
 			nma.speed = origSpeed;
+			npcsp.SetDestination();
 		}
 	}
 }

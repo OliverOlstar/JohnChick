@@ -58,18 +58,22 @@ public class FieldOfView : MonoBehaviour {
 			Vector3 dirToTarget = (target.position - transform.position).normalized;
 			if (Vector3.Angle (transform.forward, dirToTarget) < viewAngle / 2) {
 				float dstToTarget = Vector3.Distance (transform.position, target.position);
-				if (!Physics.Raycast (transform.position, dirToTarget, dstToTarget, obstacleMask)) {
-					visibleTargets.Add (target);
+				if (!Physics.Raycast (transform.position, dirToTarget, dstToTarget, obstacleMask)&& target.CompareTag("Player")) {
+					visibleTargets.Add(target);
 					Debug.Log(target.tag);
-					if (target.CompareTag("Player"))
+					if (target.CompareTag("Player") && dstToTarget <= viewRadius )
 					{
 						transform.LookAt(target);
 						enemyattacks.seen = true;
+						visibleTargets.Remove(target);
 					}
-					else
+
+					else 
 					{
 						enemyattacks.seen = false;
+
 					}
+
 				}
 				
 			}
