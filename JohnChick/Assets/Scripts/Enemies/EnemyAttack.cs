@@ -44,9 +44,13 @@ public class EnemyAttack : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
+		
 		npcsp = GetComponent<NPCSimplePatrol>();
 		nma = GetComponent<NavMeshAgent>();
-		origSpeed = nma.speed;
+		if (npcsp != null)
+		{
+			origSpeed = nma.speed;
+		}
 
 		shootscript = GetComponent<Shooting>();
 	}
@@ -58,8 +62,12 @@ public class EnemyAttack : MonoBehaviour
 		{
 			
 			targetFound();
-			nma.speed = 0;
-			nma.isStopped = true;
+			if (npcsp != null)
+			{
+				nma.speed = 0;
+				nma.isStopped = true;
+			}
+			
 			
 			//break;
 			//continue;
@@ -69,9 +77,13 @@ public class EnemyAttack : MonoBehaviour
 			Debug.Log("***");
 			
 			targetNotFound();
-			nma.isStopped = false;
-			nma.speed = origSpeed;
-			npcsp.SetDestination();
+			if (npcsp != null)
+			{
+				nma.isStopped = false;
+				nma.speed = origSpeed;
+				npcsp.SetDestination();
+			}
+			
 		}
 	}
 }
