@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 6421784760308867122}
   - component: {fileID: 6898401940657780640}
   - component: {fileID: 2985265553802876315}
+  - component: {fileID: 5249188446931117075}
   m_Layer: 12
   m_Name: Enemy(Pidgeon)
   m_TagString: Untagged
@@ -208,7 +209,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3533646088721872925, guid: 95fbda30e6e527a4183102621b720e3d,
     type: 3}
-  muzzle: {fileID: 1456229718424761375}
+  muzzle:
+  - {fileID: 0}
   forwardForce: 15
   bulletsPerSec: 0.75
   bulletLife: 4
@@ -248,6 +250,21 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &5249188446931117075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6174544954568680378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb410568653473f49b900f94448dc2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resilience: 1
+  isEnemy: 1
+  gameManager: {fileID: 0}
 --- !u!1 &7008355728789433688
 GameObject:
   m_ObjectHideFlags: 0
