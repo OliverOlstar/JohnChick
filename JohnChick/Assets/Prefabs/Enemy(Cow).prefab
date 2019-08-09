@@ -99,7 +99,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4cc495c003552d84093bc8dafc2814fb, type: 2}
+  - {fileID: 2100000, guid: d82398a15eb110a48b9a96de69f55326, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -145,21 +145,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e46aac6a47a82954cb8858de50ae6989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 6.51
-  viewAngle: 88.8
+  viewRadius: 9
+  agroLostRadius: 10
+  viewAngle: 90
   targetMask:
     serializedVersion: 2
     m_Bits: 2048
   obstacleMask:
     serializedVersion: 2
     m_Bits: 9239
-  visibleTargets: []
+  target: {fileID: 0}
   meshResolution: 1
   edgeResolveIterations: 36
   edgeDstThreshold: 25
   maskCutawayDst: 0.1
   viewMeshFilter: {fileID: 5350765961748106626}
-  enemyattacks: {fileID: 0}
+  enemyattacks: {fileID: 2340756037948189618}
 --- !u!54 &4797518963060053278
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -174,7 +175,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!114 &7798227019742955986
 MonoBehaviour:
@@ -209,11 +210,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c57d1cbd0d0b2440bc3621caecc2626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 3533646088721872925, guid: 95fbda30e6e527a4183102621b720e3d,
+  bulletPrefab: {fileID: 5082221112435382305, guid: 46a939526265b8741902271295ac600f,
     type: 3}
-  muzzle: {fileID: 3677073682773023968}
+  muzzle:
+  - {fileID: 3677073682773023968}
+  - {fileID: 1188840927775604130}
+  - {fileID: 4834227975268045625}
+  - {fileID: 2112950068533489766}
   forwardForce: 15
-  bulletsPerSec: 0.75
+  bulletsPerSec: 2
   bulletLife: 4
   bulletSize: 1
 --- !u!114 &2340756037948189618
@@ -242,7 +247,7 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 12
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
