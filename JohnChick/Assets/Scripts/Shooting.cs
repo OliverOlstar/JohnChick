@@ -11,7 +11,7 @@ public class Shooting : MonoBehaviour
 
     [Header("Shooting")]
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private List<Transform> muzzle = new List<Transform>();
+    public List<Transform> muzzle = new List<Transform>();
     [SerializeField] private float forwardForce;
 
     private int curMuzzle = 0;
