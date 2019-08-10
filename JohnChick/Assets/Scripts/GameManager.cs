@@ -15,8 +15,8 @@ public class GameManager : MonoBehaviour
     public int levelStartScore;
     public Text scoreText;
 
-    public int currentLevel = 1;
-    public int lastLevel = 1;
+    public int currentLevel ;
+    public int lastLevel;
     // Start is called before the first frame update
     void Start()
     {
@@ -76,6 +76,18 @@ public class GameManager : MonoBehaviour
             Button[] buttons = FindObjectOfType<Canvas>().GetComponentsInChildren<Button>();
             buttons[0].onClick.AddListener(ToTitle);
             buttons[1].onClick.AddListener(QuitGame);
+            Text [] texts = FindObjectOfType<Canvas>().GetComponentsInChildren<Text>();
+            for (int i = 0; i < texts.Length; i++)
+            {
+                if (texts[i].tag == "Score")
+                {
+                    scoreText = texts[i];
+                    scoreText.text = "Revenge Score: " + score;
+                    break;
+                }
+                else
+                    Debug.Log("Not Score");
+            }
         }
         if (SceneManager.GetActiveScene().name == "Level" + currentLevel)
         {
@@ -124,7 +136,6 @@ public class GameManager : MonoBehaviour
             levelStartScore = score;
             currentLevel++;
             SceneManager.LoadScene("Level" + currentLevel);
-
         }
         else
             SceneManager.LoadScene("EndGame");
@@ -168,25 +179,21 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0;
         Button[] buttons = FindObjectOfType<Canvas>().GetComponentsInChildren<Button>();
-        Text[] buttonText = FindObjectOfType<Canvas>().GetComponentsInChildren<Text>();
-        buttons[0].image.enabled = true;
+       RawImage[] buttonImg = FindObjectOfType<Canvas>().GetComponentsInChildren<RawImage>();
+
         buttons[0].onClick.AddListener(Resume);
-        buttons[1].image.enabled = true;
         buttons[1].onClick.AddListener(ToTitle);
-        buttonText[1].enabled = true;
-        buttonText[2].enabled = true;
+        buttonImg[0].enabled = true;
+        buttonImg[1].enabled = true;
 
     }
 
     public void Resume()
     {
         Time.timeScale = 1;
-        Button[] buttons = FindObjectOfType<Canvas>().GetComponentsInChildren<Button>();
-        Text[] buttonText = FindObjectOfType<Canvas>().GetComponentsInChildren<Text>();
-        buttons[0].image.enabled = false;
-        buttons[1].image.enabled = false;
-        buttonText[1].enabled = false;
-        buttonText[2].enabled = false;
+        RawImage[] buttonImg = FindObjectOfType<Canvas>().GetComponentsInChildren<RawImage>();
+        buttonImg[0].enabled = false;
+        buttonImg[1].enabled = false;
     }
 
 }

@@ -12177,7 +12177,7 @@ PrefabInstance:
     - target: {fileID: 128722772471505927, guid: 8f417621dade6954fb8daa6bcd238cd5,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 128722772471505923, guid: 8f417621dade6954fb8daa6bcd238cd5,
         type: 3}
@@ -16912,19 +16912,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7311742414718083474, guid: b12640c924630de4290d2c1df64c4876,
-        type: 3}
-      propertyPath: jumpForce
-      value: 550
-      objectReference: {fileID: 0}
-    - target: {fileID: 1551307435, guid: b12640c924630de4290d2c1df64c4876, type: 3}
-      propertyPath: m_Center.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1592691105, guid: b12640c924630de4290d2c1df64c4876, type: 3}
-      propertyPath: HasGun
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1505756304104321110, guid: b12640c924630de4290d2c1df64c4876,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -16944,6 +16931,19 @@ PrefabInstance:
         type: 3}
       propertyPath: myGun
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592691105, guid: b12640c924630de4290d2c1df64c4876, type: 3}
+      propertyPath: HasGun
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311742414718083474, guid: b12640c924630de4290d2c1df64c4876,
+        type: 3}
+      propertyPath: jumpForce
+      value: 550
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551307435, guid: b12640c924630de4290d2c1df64c4876, type: 3}
+      propertyPath: m_Center.y
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b12640c924630de4290d2c1df64c4876, type: 3}
