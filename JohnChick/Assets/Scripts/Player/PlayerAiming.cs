@@ -53,6 +53,7 @@ public class PlayerAiming : MonoBehaviour
                 _shooting.muzzle[0] = fastMuzzle;
                 _shooting.StopShooting();
                 _shooting.StartShooting(fastBullet);
+                //choose the clip
             }
             else if (Input.GetButtonDown("Fire2"))
             {
@@ -60,6 +61,7 @@ public class PlayerAiming : MonoBehaviour
                 _shooting.muzzle[0] = slowMuzzle;
                 _shooting.StopShooting();
                 _shooting.StartShooting(slowBullet);
+                //choose the clip
             }
 
             if (!Input.GetButton("Fire1") && !Input.GetButton("Fire2"))
