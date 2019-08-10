@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationTime: 1
-  threshold: 0
+  threshold: 1.5
 --- !u!1 &440770275
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,6 +707,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraHolderHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 5594239210187822686, guid: 6b453b2ce1db45d498557027655a2008,
+        type: 3}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 752759437}
     - target: {fileID: 5594239210187822625, guid: 6b453b2ce1db45d498557027655a2008,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -762,11 +767,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5594239210187822686, guid: 6b453b2ce1db45d498557027655a2008,
-        type: 3}
-      propertyPath: _target
-      value: 
-      objectReference: {fileID: 752759437}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b453b2ce1db45d498557027655a2008, type: 3}
 --- !u!1001 &7311742414223766923

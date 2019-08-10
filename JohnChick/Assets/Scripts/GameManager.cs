@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     static GameManager _instance = null;
 
     [SerializeField] private int _score;
+    public int levelStartScore;
     public Text scoreText;
 
     public int currentLevel = 1;
@@ -71,6 +72,29 @@ public class GameManager : MonoBehaviour
             buttons[0].onClick.AddListener(ToTitle);
             buttons[1].onClick.AddListener(QuitGame);
         }
+        if (SceneManager.GetActiveScene().name == "Level" + currentLevel)
+        {
+            if (!scoreText)
+            {
+                Canvas canvas = FindObjectOfType<Canvas>();
+                if (!canvas)
+                    Debug.Log("No Canvas");
+                Text[] texts = canvas.GetComponentsInChildren<Text>();
+                if (!texts[0])
+                    Debug.Log("No text");
+                for (int i = 0; i < texts.Length; i++)
+                {
+                    if (texts[i].tag == "Score")
+                    {
+                        scoreText = texts[i];
+                        scoreText.text = "Revenge Score: " + score;
+                        break;
+                    }
+                    else
+                        Debug.Log("Not Score");
+                }
+            }
+        }
     }
     public static GameManager instance
     {
@@ -81,6 +105,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         currentLevel = 1;
+        score = 0;
         SceneManager.LoadScene("Level1");
     }
 
@@ -88,17 +113,10 @@ public class GameManager : MonoBehaviour
     {
         if (currentLevel != lastLevel)
         {
+            levelStartScore = score;
             currentLevel++;
             SceneManager.LoadScene("Level" + currentLevel);
-            Text [] texts = Component.FindObjectsOfType<Text>();
-            for (int i = 0; i < texts.Length; i++)
-            {
-                if (texts[i].tag == "Score")
-                {
-                    scoreText = texts[i];
-                    break;
-                }
-            }
+
         }
         else
             SceneManager.LoadScene("EndGame");
@@ -106,6 +124,7 @@ public class GameManager : MonoBehaviour
 
     public void Respawn()
     {
+        score = levelStartScore;
         SceneManager.LoadScene("Level" + currentLevel);
     }
 
@@ -128,7 +147,7 @@ public class GameManager : MonoBehaviour
             // Check if 'scoreText' was set before trying to update HUD
             if (scoreText)
                 // Update HUD on every score change
-                scoreText.text = "Score: " + score;
+                scoreText.text = "Revenge Score: " + score;
         }
     }
 
