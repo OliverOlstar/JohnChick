@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Resilience : MonoBehaviour
 {
+    private AudioSource playSound;
+    public AudioClip deathPigSound;
     [Range(1,3)]public int resilience;
     public bool isEnemy;
 	bool stunned;
@@ -22,8 +24,10 @@ public class Resilience : MonoBehaviour
             if( resilience >= enemResilience)
             {
                 gameManager.score += enemResilience * 5;
-				//Death case
+                //Death case
                 //c.gameObject.SetActive(false);
+                playSound.clip = deathPigSound;
+                playSound.Play();
 				Destroy(c.gameObject);
             }
 			if (enemResilience - resilience==1)
