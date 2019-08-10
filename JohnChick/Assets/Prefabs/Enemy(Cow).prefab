@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 9127675484224437679}
   - component: {fileID: 2649773444697680323}
   - component: {fileID: 6468536632304540162}
-  - component: {fileID: 4016790985754014980}
+  - component: {fileID: 5426875691351863492}
   m_Layer: 12
   m_Name: Enemy(Cow)
   m_TagString: Untagged
@@ -245,6 +245,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationTime: 1
   threshold: 1.5
+--- !u!114 &5426875691351863492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3547660575813509027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb410568653473f49b900f94448dc2a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
