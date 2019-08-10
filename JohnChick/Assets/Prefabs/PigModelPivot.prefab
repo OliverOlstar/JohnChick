@@ -94,8 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3248601409988390195}
   - component: {fileID: 3248601409988390192}
+  - component: {fileID: 1691334273756573463}
   m_Layer: 9
-  m_Name: ModelPivot
+  m_Name: PigModelPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,6 +130,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!114 &1691334273756573463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3248601409988390193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8422caa342344c428d442e3bddd72aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myPrefab: {fileID: 1152991391245805355, guid: ea633ed55a9fb474196b5b9daeeadd4b,
+    type: 3}
+  patrolRoute: {fileID: 0}
 --- !u!1001 &3248601409505612581
 PrefabInstance:
   m_ObjectHideFlags: 0

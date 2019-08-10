@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Follow : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    public Transform target;
 
     // Start is called before the first frame update
     void Start()

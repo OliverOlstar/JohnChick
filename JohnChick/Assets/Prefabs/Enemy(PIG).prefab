@@ -113,12 +113,7 @@ MonoBehaviour:
   _patrolWaiting: 1
   _totalWaitTime: 1.5
   _switchProbability: 0.12
-  _patrolPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _patrolPoints: []
 --- !u!114 &902090849006318149
 MonoBehaviour:
   m_ObjectHideFlags: 0
