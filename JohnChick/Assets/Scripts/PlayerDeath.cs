@@ -10,8 +10,6 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] private PlayerCamera _camera;
     [SerializeField] private Transform _model;
     [SerializeField] private GameObject deadPrefab;
-
-    [Space]
     [SerializeField] private float forceMult;
 
     public void Damage(Vector3 pForce)
@@ -25,7 +23,7 @@ public class PlayerDeath : MonoBehaviour
         _camera._target = deadMe.transform;
 
         Time.timeScale = 0.15f;
-        CameraShaker.Instance.StartShake(6, 4, 1);
+        CameraShaker.Instance.StartShake(5, 2, 1);
 
         Destroy(this.gameObject);
 

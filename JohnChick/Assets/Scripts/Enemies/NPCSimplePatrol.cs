@@ -92,15 +92,22 @@ public class NPCSimplePatrol : MonoBehaviour
 		}
     }
  
-	private void SetDestination()
+	public void SetDestination()
 	{
 		if (_patrolPoints != null)
 		{
 			Vector3 targetVector = _patrolPoints[_currentPatrolIndex].transform.position;
+			Quaternion targetVectorDir = _patrolPoints[_currentPatrolIndex].transform.rotation;
 
 			//Hopping motion
-			transform.LookAt(targetVector);
-			
+			//transform.LookAt(targetVector);
+
+			// The step size is equal to speed times frame time.
+			var step = (_navMeshAgent.angularSpeed) * Time.deltaTime;
+
+			// Rotate our transform a step closer to the target's.
+			transform.rotation = Quaternion.RotateTowards(transform.rotation, targetVectorDir, step);
+
 			//_navMeshAgent.Move(transform.forward*Time.deltaTime);
 			_navMeshAgent.SetDestination(targetVector);
 			_travelling = true;

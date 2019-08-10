@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 7738494061711876884}
   - component: {fileID: 7738494061711876885}
   - component: {fileID: 3904892412188298916}
+  - component: {fileID: 3117516120950491095}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -220,6 +221,21 @@ MonoBehaviour:
   navMeshAgent: {fileID: 0}
   movingPlatform: {fileID: 7738494060863047563}
   speedingPlatform: {fileID: 0}
+  fan: {fileID: 0}
+--- !u!114 &3117516120950491095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7738494061711876882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3a70435afa6144ab056f9dc773446b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationTime: 1
+  threshold: 1.5
 --- !u!1 &7738494062495104859
 GameObject:
   m_ObjectHideFlags: 0
