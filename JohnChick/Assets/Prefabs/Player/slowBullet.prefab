@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 564055542447235840}
   - component: {fileID: 4232092068997616869}
   - component: {fileID: 2224599177743298942}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: slowBullet
-  m_TagString: Untagged
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
