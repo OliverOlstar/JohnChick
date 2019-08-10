@@ -5423,7 +5423,7 @@ PrefabInstance:
     - target: {fileID: 7311742414718083473, guid: b12640c924630de4290d2c1df64c4876,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7311742414718083473, guid: b12640c924630de4290d2c1df64c4876,
         type: 3}
@@ -5438,6 +5438,30 @@ PrefabInstance:
     - target: {fileID: 7311742414718083473, guid: b12640c924630de4290d2c1df64c4876,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505756304104321110, guid: b12640c924630de4290d2c1df64c4876,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505756304104321110, guid: b12640c924630de4290d2c1df64c4876,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505756304104321110, guid: b12640c924630de4290d2c1df64c4876,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505756302189712381, guid: b12640c924630de4290d2c1df64c4876,
+        type: 3}
+      propertyPath: myGun
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592691105, guid: b12640c924630de4290d2c1df64c4876, type: 3}
+      propertyPath: HasGun
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6537,6 +6561,12 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!4 &1242975060 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7311742414718083473, guid: b12640c924630de4290d2c1df64c4876,
+    type: 3}
+  m_PrefabInstance: {fileID: 912932881}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1344830051
 Mesh:
   m_ObjectHideFlags: 0
@@ -6857,12 +6887,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!4 &1551307438 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7311742414718083473, guid: b12640c924630de4290d2c1df64c4876,
-    type: 3}
-  m_PrefabInstance: {fileID: 912932881}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1580316834
 Mesh:
   m_ObjectHideFlags: 0
@@ -7367,7 +7391,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _target
       value: 
-      objectReference: {fileID: 1551307438}
+      objectReference: {fileID: 1242975060}
     - target: {fileID: 5594239210187822625, guid: 6b453b2ce1db45d498557027655a2008,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8601,7 +8625,7 @@ PrefabInstance:
     - target: {fileID: 4524392065183257014, guid: fea4bbf918ddcae42a128d3f0c42f4df,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4524392065183257014, guid: fea4bbf918ddcae42a128d3f0c42f4df,
         type: 3}

@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 4524392065183257012}
   - component: {fileID: 4524392065183257011}
   - component: {fileID: 4524392065183257010}
+  - component: {fileID: 4524392065183257009}
   m_Layer: 0
-  m_Name: Gun Pickup prefab
+  m_Name: Gun Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -131,3 +132,15 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &4524392065183257009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4524392065183257008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d299a8c1a8c3334f8d7b8d54df612cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
