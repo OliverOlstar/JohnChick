@@ -97,6 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7086813552550818181}
   - component: {fileID: 7086813552550818182}
+  - component: {fileID: 227722016}
   m_Layer: 9
   m_Name: CowModelPivot
   m_TagString: Untagged
@@ -132,6 +133,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!114 &227722016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7086813552550818183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8422caa342344c428d442e3bddd72aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myPrefab: {fileID: 3547660575813509027, guid: a5f7046ee3eb40d4b8e7da7a78f29faa,
+    type: 3}
+  patrolRoute: {fileID: 0}
 --- !u!1001 &3196716536443695263
 PrefabInstance:
   m_ObjectHideFlags: 0
