@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float maxSpeed = 5f;
-
+   
     [Header("Jump")]
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float rayDistance = 0.2f;
@@ -14,7 +14,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody _rb;
 
     private bool OnGround = true;
+    //audio variables
+    private AudioSource playsound;
+    public AudioClip jump;
 
+
+    private void Start()
+    {
+        playsound = GetComponent<AudioSource>();
+    }
     void Update()
     {
         OnGroundCheck();
@@ -39,6 +47,17 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
         if (OnGround && Input.GetButtonDown("Jump"))
+        {
             _rb.AddForce(Vector3.up * jumpForce);
+            playEffect();
+        }
     }
+
+    private void playEffect()
+    {
+        playsound.clip = jump;
+        playsound.volume = 0.35f;
+        playsound.Play();
+    }
+
 }

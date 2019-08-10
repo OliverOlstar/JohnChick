@@ -9,6 +9,8 @@ public class PlayerAiming : MonoBehaviour
     [SerializeField] private GameObject fastBullet;
     [SerializeField] private ParticleSystem slowMuzzleFlash;
     [SerializeField] private ParticleSystem fastMuzzleFlash;
+    [SerializeField] private Transform slowMuzzle;
+    [SerializeField] private Transform fastMuzzle;
 
     [Header("TURN THIS ON IF YOU SHOULD HAVE GUN AT START OF LEVEL")]
     [SerializeField] private bool HasGun = false;
@@ -48,14 +50,18 @@ public class PlayerAiming : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 _shooting.muzzleFlash = fastMuzzleFlash;
+                _shooting.muzzle[0] = fastMuzzle;
                 _shooting.StopShooting();
                 _shooting.StartShooting(fastBullet);
+                //choose the clip
             }
             else if (Input.GetButtonDown("Fire2"))
             {
                 _shooting.muzzleFlash = slowMuzzleFlash;
+                _shooting.muzzle[0] = slowMuzzle;
                 _shooting.StopShooting();
                 _shooting.StartShooting(slowBullet);
+                //choose the clip
             }
 
             if (!Input.GetButton("Fire1") && !Input.GetButton("Fire2"))
