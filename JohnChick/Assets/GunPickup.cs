@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class GunPickup : MonoBehaviour
 {
-	public GameObject muzzle;
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            other.gameObject.GetComponentInChildren<PlayerAiming>().pickedUpGun();
+            Destroy(this.gameObject);
+        }
     }
 
+<<<<<<< HEAD:JohnChick/Assets/GunPickup.cs
 	private void OnCollisionEnter(Collision col)
 	{
 		if (col.gameObject.tag == "Gun Pickup")
@@ -22,7 +25,10 @@ public class GunPickup : MonoBehaviour
 
 	// Update is called once per frame
 	void Update()
+=======
+    private void Update()
+>>>>>>> parent of 18a3ded... fixed player prefab, level1 and gunscript:JohnChick/Assets/Scripts/Player/GunPickup.cs
     {
-        
+        transform.Rotate(Vector3.left, 1);
     }
 }
