@@ -21,9 +21,9 @@ public class HighlightObject : MonoBehaviour
 
         normalColor = material.color;
         selectedColor = new Color(
-            Mathf.Clamp01(normalColor.r * threshold*-1),
+            Mathf.Clamp01(normalColor.r * threshold),
             Mathf.Clamp01(normalColor.g * threshold),
-            Mathf.Clamp01(normalColor.b * threshold*-1));
+            Mathf.Clamp01(normalColor.b * threshold));
         fastColor = new Color(
             Mathf.Clamp01(normalColor.r * (threshold * 2)),
             Mathf.Clamp01(normalColor.g * (threshold * -1 / 2)),
@@ -43,7 +43,10 @@ public class HighlightObject : MonoBehaviour
             SlowHighlight();
         if (fastSlowEffect.timeScale == 1)
             StopHighlight();
-
+        if(tag == "Player")
+        {
+            StopHighlight();
+        }
     }
 
     public void StartHighlight()

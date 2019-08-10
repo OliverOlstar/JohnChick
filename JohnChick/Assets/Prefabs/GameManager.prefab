@@ -46,9 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _score: 0
+  levelStartScore: 0
   scoreText: {fileID: 0}
   currentLevel: 1
-  lastLevel: 2
+  lastLevel: 3
 --- !u!114 &6563244090385326180
 MonoBehaviour:
   m_ObjectHideFlags: 0
