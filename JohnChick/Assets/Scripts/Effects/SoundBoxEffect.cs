@@ -9,14 +9,18 @@ public class SoundBoxEffect : MonoBehaviour
     public AudioSource playsound;
     public AudioClip[] boxEffect;
 
+    private float startTime;
+
     void Start()
     {
         playsound =  GetComponent<AudioSource>();
+        startTime = Time.time;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        playEffect();
+        if (startTime != Time.time)
+            playEffect();
     }
 
     private void playEffect()
