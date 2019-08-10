@@ -156,4 +156,14 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Title Screen");
     }
 
+    public void Pause()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1;
+    }
+
 }

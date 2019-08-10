@@ -13,6 +13,8 @@ public class Shooting : MonoBehaviour
     private int curMuzzle = 0;
     float bulletTimeScale = 1.0f;
 
+    public ParticleSystem muzzleFlash;
+
     [Header("Bullet")]
     [SerializeField] private float bulletsPerSec;
     [SerializeField] private float bulletLife;
@@ -48,6 +50,8 @@ public class Shooting : MonoBehaviour
             Destroy(bullet, bulletLife);
 
             CameraShaker.Instance.ShakeOnce(1, 2, 0.1f, 0.15f);
+            if (muzzleFlash)
+                muzzleFlash.Play();
 
             curMuzzle++;
             if (curMuzzle == muzzle.Count)

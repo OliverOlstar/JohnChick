@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fastAndSlowScale: -1
+  effect: {fileID: 426696615358025335, guid: 15176f8d03587f045b3a6b482c0a2509, type: 3}
 --- !u!136 &2224599177743298942
 CapsuleCollider:
   m_ObjectHideFlags: 0
