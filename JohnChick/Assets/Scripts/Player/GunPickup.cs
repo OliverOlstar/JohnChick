@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class GunPickup : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+	public GameObject muzzle;
+    // Start is called before the first frame update
+    void Start()
     {
-        if (other.CompareTag("Player"))
-        {
-            other.gameObject.GetComponentInChildren<PlayerAiming>().pickedUpGun();
-            Destroy(this.gameObject);
-        }
+        
     }
 
-    private void Update()
+	private void OnCollisionEnter(Collision col)
+	{
+		if (col.gameObject.tag == "Gun")
+		{
+			col.gameObject.transform.parent = muzzle.transform;
+			col.transform.position.Set(muzzle.transform.position.x, muzzle.transform.position.y, muzzle.transform.position.z);
+		}
+	}
+
+	// Update is called once per frame
+	void Update()
     {
-        transform.Rotate(Vector3.left, 1);
+        
     }
 }
