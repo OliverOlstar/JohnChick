@@ -204,6 +204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c57d1cbd0d0b2440bc3621caecc2626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShootingSound: {fileID: 8300000, guid: 9ab3c0dd3dfeebb48831ff49de2166e4, type: 3}
+  bulletDestroyPig: {fileID: 0}
   bulletPrefab: {fileID: 8747432685978493610, guid: 0a79c1a7e7be69c4198f9fe74cdc6f29,
     type: 3}
   muzzle:
@@ -274,6 +276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb410568653473f49b900f94448dc2a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playSound: {fileID: 0}
+  deathPigSound: {fileID: 8300000, guid: 2554189e9ea74e04698a0ab9fc232c3b, type: 3}
   resilience: 1
   isEnemy: 1
   isBullet: 0
