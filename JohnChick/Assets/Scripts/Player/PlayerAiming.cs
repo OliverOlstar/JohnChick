@@ -8,32 +8,58 @@ public class PlayerAiming : MonoBehaviour
     [SerializeField] private GameObject slowBullet;
     [SerializeField] private GameObject fastBullet;
 
+    [Header("TURN THIS ON IF YOU SHOULD HAVE GUN AT START OF LEVEL")]
+    [SerializeField] private bool HasGun = false;
+    [SerializeField] private GameObject myGun;
+
+    private bool Gamepad = false;
+
 
     void Start()
     {
         _shooting = GetComponent<Shooting>();
+
+        if (HasGun)
+            myGun.SetActive(false);
     }
     
+    public void pickedUpGun()
+    {
+        myGun.SetActive(true);
+        HasGun = true;
+    }
+
     void Update()
     {
-        Rotation();
+        if (Input.GetKeyDown(KeyCode.JoystickButton7))
+            Gamepad = true;
+        else if (Input.GetKeyDown(KeyCode.Space))
+            Gamepad = false;
+            
+        if (Gamepad)
+            RotationGamepad();
+        else
+            Rotation();
 
-        if (Input.GetButtonDown("Fire1"))
+        if (HasGun)
         {
-            _shooting.StopShooting();
-            _shooting.StartShooting(fastBullet);
-        }
-        else if (Input.GetButtonDown("Fire2"))
-        {
-            _shooting.StopShooting();
-            _shooting.StartShooting(slowBullet);
-        }
-
-        if (!Input.GetButton("Fire1") && !Input.GetButton("Fire2"))
-        {
-            if (Input.GetButtonUp("Fire1") || Input.GetButtonUp("Fire2"))
+            if (Input.GetButtonDown("Fire1"))
             {
                 _shooting.StopShooting();
+                _shooting.StartShooting(fastBullet);
+            }
+            else if (Input.GetButtonDown("Fire2"))
+            {
+                _shooting.StopShooting();
+                _shooting.StartShooting(slowBullet);
+            }
+
+            if (!Input.GetButton("Fire1") && !Input.GetButton("Fire2"))
+            {
+                if (Input.GetButtonUp("Fire1") || Input.GetButtonUp("Fire2"))
+                {
+                    _shooting.StopShooting();
+                }
             }
         }
     }
@@ -50,5 +76,13 @@ public class PlayerAiming : MonoBehaviour
             float rotation = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, rotation, 0);
         }
+    }
+
+    void RotationGamepad()
+    {
+        Vector3 joyInput = new Vector3(Input.GetAxis("HorizontalR"), 0, Input.GetAxis("VerticalR"));
+        joyInput.Normalize();
+        joyInput.y = transform.position.y;
+        transform.forward = joyInput;
     }
 }
