@@ -129,11 +129,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c57d1cbd0d0b2440bc3621caecc2626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playSound: {fileID: 0}
+  ShootingSound: {fileID: 8300000, guid: 806218cd0d05fa444a12f8351726ca5f, type: 3}
+  bulletDestroyPig: {fileID: 8300000, guid: 706cc8b33d6049641b9888e5778a3007, type: 3}
   bulletPrefab: {fileID: 3533646088721872925, guid: 95fbda30e6e527a4183102621b720e3d,
     type: 3}
   muzzle:
   - {fileID: 35693229429140403}
   forwardForce: 15
+  muzzleFlash: {fileID: 0}
   bulletsPerSec: 0.33
   bulletLife: 4
   bulletSize: 1
@@ -216,6 +220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb410568653473f49b900f94448dc2a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playSound: {fileID: 0}
+  deathPigSound: {fileID: 8300000, guid: a26d0b53f4a66494a8a3e28ef36de763, type: 3}
   resilience: 2
   isEnemy: 1
   gameManager: {fileID: 6563244090385326202, guid: 0a3c80a5705624741a9b72ec35cebfa7,

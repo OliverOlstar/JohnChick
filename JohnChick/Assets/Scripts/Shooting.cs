@@ -5,6 +5,10 @@ using EZCameraShake;
 
 public class Shooting : MonoBehaviour
 {
+    private AudioSource playSound;
+    public AudioClip ShootingSound;
+    public AudioClip bulletDestroyPig;
+
     [Header("Shooting")]
     [SerializeField] private GameObject bulletPrefab;
     public List<Transform> muzzle = new List<Transform>();
@@ -19,7 +23,10 @@ public class Shooting : MonoBehaviour
     [SerializeField] private float bulletsPerSec;
     [SerializeField] private float bulletLife;
     [SerializeField] private float bulletSize;
-
+    private void Start()
+    {
+        playSound.GetComponent<AudioSource>();
+    }
     public void StartShooting(GameObject pPrefab = null)
     {
         if (pPrefab != null)
@@ -38,6 +45,8 @@ public class Shooting : MonoBehaviour
         while (true)
         {
             GameObject bullet = Instantiate(bulletPrefab);
+            playSound.clip = ShootingSound;
+            playSound.Play();
             bullet.transform.position = muzzle[curMuzzle].position;
             bullet.transform.forward = muzzle[curMuzzle].forward;
             bullet.transform.localScale *= bulletSize;
@@ -47,6 +56,8 @@ public class Shooting : MonoBehaviour
                 bullet.GetComponent<FastAndSlowEffect>().timeScale = bulletTimeScale;
             }
             bullet.GetComponent<Rigidbody>().AddForce(new Vector3(transform.forward.x * forwardForce * bulletTimeScale, 0, transform.forward.z * forwardForce * bulletTimeScale), ForceMode.Impulse);
+            playSound.clip = bulletDestroyPig;
+            playSound.Play();
             Destroy(bullet, bulletLife);
 
             CameraShaker.Instance.ShakeOnce(1, 2, 0.1f, 0.15f);

@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody _rb;
 
     private bool OnGround = true;
+
     //audio variables
     private AudioSource playsound;
     public AudioClip jump;
