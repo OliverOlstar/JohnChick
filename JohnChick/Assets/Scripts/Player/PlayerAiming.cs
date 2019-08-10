@@ -12,7 +12,7 @@ public class PlayerAiming : MonoBehaviour
 
     [Header("TURN THIS ON IF YOU SHOULD HAVE GUN AT START OF LEVEL")]
     [SerializeField] private bool HasGun = false;
-    [SerializeField] private GameObject myGun;
+    [SerializeField] public GameObject myGun;
 
     private bool Gamepad = false;
 

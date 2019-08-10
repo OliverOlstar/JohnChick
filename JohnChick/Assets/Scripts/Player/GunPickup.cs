@@ -5,9 +5,9 @@ using UnityEngine;
 public class GunPickup : MonoBehaviour
 {
 	public PlayerAiming pa;
-	private void OnCollisionEnter(Collision col)
+	private void OnTriggerEnter(Collider col)
 	{
-		if (col.gameObject.tag == "Gun Pickup")
+		if (col.gameObject.name == "Gun Pickup")
 		{
 			pa.pickedUpGun();
 		}
