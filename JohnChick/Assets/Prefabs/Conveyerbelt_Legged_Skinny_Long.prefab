@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 6401095254771218887}
   - component: {fileID: 3986438225876953259}
   - component: {fileID: 8527968986390539281}
+  - component: {fileID: 8977313672122731482}
   m_Layer: 0
   m_Name: Convey_low
   m_TagString: Untagged
@@ -154,6 +155,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8977313672122731482
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539967268959773743}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300012, guid: 445f67962e17d45438021aa180164d0c, type: 3}
 --- !u!1 &812939815356956614
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +257,7 @@ GameObject:
   - component: {fileID: 7970344261241211027}
   - component: {fileID: 7893003467050569640}
   - component: {fileID: 1488112154193025929}
+  - component: {fileID: 6502771254535743410}
   m_Layer: 0
   m_Name: Stand_low
   m_TagString: Untagged
@@ -308,6 +324,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &6502771254535743410
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901766717323717535}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1970723, y: 0.766604, z: 0.6265118}
+  m_Center: {x: -0.0011709742, y: -0.31113207, z: -0.083150454}
 --- !u!1 &1266600509075179366
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,6 +348,7 @@ GameObject:
   - component: {fileID: 7346901129032802562}
   - component: {fileID: 3784589711418461131}
   - component: {fileID: 3996050787166357081}
+  - component: {fileID: 7559133502732223939}
   m_Layer: 0
   m_Name: Stand_low 1
   m_TagString: Untagged
@@ -385,6 +415,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7559133502732223939
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266600509075179366}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1970723, y: 0.766604, z: 0.6265118}
+  m_Center: {x: -0.0011719279, y: -0.31113207, z: -0.083150454}
 --- !u!1 &2067083352847922037
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,7 +575,6 @@ GameObject:
   - component: {fileID: 708781605623459111}
   - component: {fileID: 951651273366520594}
   - component: {fileID: 3804589799090859064}
-  - component: {fileID: 4207250097222046788}
   m_Layer: 0
   m_Name: Conveyerbelt_Legged_Skinny_Long
   m_TagString: Untagged
@@ -572,7 +614,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   navMeshAgent: {fileID: 0}
   movingPlatform: {fileID: 0}
-  speedingPlatform: {fileID: 3892022885786510132}
+  speedingPlatform: {fileID: 0}
   fan: {fileID: 0}
 --- !u!23 &951651273366520594
 MeshRenderer:
@@ -625,19 +667,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationTime: 1
   threshold: 1.5
---- !u!65 &4207250097222046788
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3357584835466547809}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5.93, y: 0.85, z: 0.95}
-  m_Center: {x: 0, y: 0.5, z: 1.5}
 --- !u!1 &4748864373297179992
 GameObject:
   m_ObjectHideFlags: 0

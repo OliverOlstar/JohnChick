@@ -31,9 +31,6 @@ public class FastAndSlowEffect : MonoBehaviour
     private float DefaultSpeedPlatform;
 
     private float DefaultFanSpeed;
-    private float DefaultParticleSpeed;
-
-    private float DefaultRotateSpeed;
 
     private float DefaultAudioVolume;
 

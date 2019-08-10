@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 3394802022775909613}
   - component: {fileID: 828767320990329930}
   - component: {fileID: 59347783559507469}
+  - component: {fileID: 4647065290413377161}
   m_Layer: 0
   m_Name: Convey_low
   m_TagString: Untagged
@@ -135,6 +136,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4647065290413377161
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2964791588874986610}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300012, guid: 445f67962e17d45438021aa180164d0c, type: 3}
 --- !u!1 &3222253404787913030
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +393,6 @@ GameObject:
   - component: {fileID: 5741044906132664353}
   - component: {fileID: 7785239405500286676}
   - component: {fileID: 1027026280973750087}
-  - component: {fileID: 849503458777237750}
   m_Layer: 0
   m_Name: Conveyerbelt_Legged_Fat_Long
   m_TagString: Untagged
@@ -418,7 +432,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   navMeshAgent: {fileID: 0}
   movingPlatform: {fileID: 0}
-  speedingPlatform: {fileID: 8344252252557908923}
+  speedingPlatform: {fileID: 0}
   fan: {fileID: 0}
 --- !u!23 &7785239405500286676
 MeshRenderer:
@@ -471,19 +485,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationTime: 1
   threshold: 1.5
---- !u!65 &849503458777237750
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4305754708718874839}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5.93, y: 0.85, z: 1.95}
-  m_Center: {x: 0, y: 0.5, z: -1}
 --- !u!1 &5145909809513879966
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,6 +573,7 @@ GameObject:
   - component: {fileID: 5558581002087569463}
   - component: {fileID: 4942626801087060739}
   - component: {fileID: 2127991726134525205}
+  - component: {fileID: 1660135474769803085}
   m_Layer: 0
   m_Name: Stand_low 1
   m_TagString: Untagged
@@ -638,6 +640,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1660135474769803085
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5490320641174176368}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1970723, y: 0.766604, z: 0.6265118}
+  m_Center: {x: -0.0011709742, y: -0.31113207, z: -0.08315048}
 --- !u!1 &5720931902908660871
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,6 +741,7 @@ GameObject:
   - component: {fileID: 4591540089053266178}
   - component: {fileID: 755221920262715775}
   - component: {fileID: 3996749072691821990}
+  - component: {fileID: 3578823638294703554}
   m_Layer: 0
   m_Name: Stand_low
   m_TagString: Untagged
@@ -792,6 +808,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3578823638294703554
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6413997442513356009}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1970723, y: 0.766604, z: 0.6265118}
+  m_Center: {x: -0.0011709742, y: -0.31113207, z: -0.08315048}
 --- !u!1 &8626947192347110737
 GameObject:
   m_ObjectHideFlags: 0
