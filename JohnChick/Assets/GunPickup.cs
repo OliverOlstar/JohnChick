@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GunPickup : MonoBehaviour
 {
-	public GameObject muzzle;
+	public PlayerAiming pa;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +15,7 @@ public class GunPickup : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Gun Pickup")
 		{
-			col.gameObject.transform.parent = muzzle.transform;
-			col.transform.position.Set(muzzle.transform.position.x, muzzle.transform.position.y, muzzle.transform.position.z);
+			pa.pickedUpGun();
 		}
 	}
 
