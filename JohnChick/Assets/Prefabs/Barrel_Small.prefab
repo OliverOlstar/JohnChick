@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4476225147626854114}
   - component: {fileID: 4476225147626854115}
   - component: {fileID: 4476225147626854124}
+  - component: {fileID: 4024887369365616734}
   m_Layer: 0
   m_Name: Barrel_Small
   m_TagString: Untagged
@@ -864,3 +865,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
+--- !u!54 &4024887369365616734
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476225147626854125}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
