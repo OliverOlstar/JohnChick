@@ -17,6 +17,8 @@ public class FastAndSlowEffect : MonoBehaviour
     [SerializeField] private MovingPlatform movingPlatform;
     [SerializeField] private speedingPlatform speedingPlatform;
     [SerializeField] private Fan fan;
+    [SerializeField] private ParticleSystem particles;
+    [SerializeField] private Rotate rotations;
 
     private Vector3 DefaultVelocity;
 
@@ -28,6 +30,9 @@ public class FastAndSlowEffect : MonoBehaviour
     private float DefaultSpeedPlatform;
 
     private float DefaultFanSpeed;
+    private float DefaultParticleSpeed;
+
+    private float DefaultRotateSpeed;
 
     private void Start()
     {
@@ -55,6 +60,16 @@ public class FastAndSlowEffect : MonoBehaviour
         if (fan)
         {
             DefaultFanSpeed = fan.speed;
+        }
+
+        if (particles)
+        {
+            DefaultParticleSpeed = particles.main.startSpeed.constant;
+        }
+
+        if (rotations)
+        {
+            DefaultRotateSpeed = rotations.rotSpeed;
         }
     }
 
@@ -95,6 +110,16 @@ public class FastAndSlowEffect : MonoBehaviour
         {
             fan.speed = DefaultFanSpeed * (timeScale + 0.1f);
             fan.changeSize((int)timeScale);
+        }
+
+        if (particles)
+        {
+            particles.startSpeed = DefaultParticleSpeed * (timeScale + 0.1f);
+        }
+
+        if (rotations)
+        {
+            rotations.rotSpeed = DefaultRotateSpeed * (timeScale + 0.1f);
         }
     }
 }

@@ -38,10 +38,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         // Check if 'Escape' was pressed
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
+        }
+        else if (Input.GetKeyDown(KeyCode.P))
+        {
+            Pause();
         }
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
@@ -104,6 +109,9 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        RawImage[] titleRawImg = FindObjectOfType<Canvas>().GetComponentsInChildren<RawImage>();
+        titleRawImg[1].enabled = false;
+        titleRawImg[2].enabled = true;
         currentLevel = 1;
         score = 0;
         SceneManager.LoadScene("Level1");
@@ -160,10 +168,13 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0;
         Button[] buttons = FindObjectOfType<Canvas>().GetComponentsInChildren<Button>();
-        buttons[0].enabled = true;
+        Text[] buttonText = FindObjectOfType<Canvas>().GetComponentsInChildren<Text>();
+        buttons[0].image.enabled = true;
         buttons[0].onClick.AddListener(Resume);
-        buttons[1].enabled = true;
+        buttons[1].image.enabled = true;
         buttons[1].onClick.AddListener(ToTitle);
+        buttonText[1].enabled = true;
+        buttonText[2].enabled = true;
 
     }
 
@@ -171,8 +182,11 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         Button[] buttons = FindObjectOfType<Canvas>().GetComponentsInChildren<Button>();
-        buttons[0].enabled = false;
-        buttons[1].enabled = false;
+        Text[] buttonText = FindObjectOfType<Canvas>().GetComponentsInChildren<Text>();
+        buttons[0].image.enabled = false;
+        buttons[1].image.enabled = false;
+        buttonText[1].enabled = false;
+        buttonText[2].enabled = false;
     }
 
 }

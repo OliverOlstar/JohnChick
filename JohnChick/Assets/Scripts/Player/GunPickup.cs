@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GunPickup : MonoBehaviour
 {
-	public PlayerAiming pa;
-	private void OnTriggerEnter(Collider col)
+	private void OnTriggerEnter(Collider other)
 	{
-		if (col.gameObject.name == "Gun Pickup")
+		if (other.CompareTag("Player"))
 		{
-			pa.pickedUpGun();
+			other.GetComponentInChildren<PlayerAiming>().pickedUpGun();
+            Destroy(this.gameObject);
 		}
 	}
 
