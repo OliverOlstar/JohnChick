@@ -5,9 +5,9 @@ using UnityEngine.AI;
 
 public class FastAndSlowEffect : MonoBehaviour
 {
-    public float timeScale = 1f;
-    private float minTimeScale = 0;
-    private float maxTimeScale = 2;
+    [Range(0.1f,2.0f)] public float timeScale = 1f;
+    private float minTimeScale = 0.1f;
+    private float maxTimeScale = 2.0f;
 
     private float alreadyCalled = 0;
 
