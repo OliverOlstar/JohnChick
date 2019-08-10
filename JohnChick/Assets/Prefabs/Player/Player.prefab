@@ -173,8 +173,8 @@ MonoBehaviour:
     type: 3}
   muzzle:
   - {fileID: 1267405008}
-  forwardForce: 20
-  bulletsPerSec: 8
+  forwardForce: 32
+  bulletsPerSec: 2
   bulletLife: 2
   bulletSize: 1
 --- !u!1 &7311742414132771571
@@ -357,7 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 50
   maxSpeed: 6
-  jumpForce: 1000
+  jumpForce: 1200
   rayDistance: 0.3
   _rb: {fileID: 7311742414718083475}
 --- !u!54 &7311742414718083475

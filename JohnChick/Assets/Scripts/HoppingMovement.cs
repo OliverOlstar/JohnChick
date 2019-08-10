@@ -29,6 +29,8 @@ public class HoppingMovement : MonoBehaviour
     
     void Update()
     {
+        transform.localPosition = new Vector3(0, transform.localPosition.y, 0);
+        
         //Get Speed
         if (speedSourceNav)
         {
