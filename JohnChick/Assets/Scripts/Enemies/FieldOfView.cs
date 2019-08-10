@@ -6,16 +6,14 @@ using UnityEngine.AI;
 public class FieldOfView : MonoBehaviour {
 
 	public float viewRadius;
-	public float agroLostRadius;
 	[Range(0,360)]
-	public float visibleViewAngle;
-	[Range(0, 360)]
-	public float actualViewAngle;
+	public float viewAngle;
 
 	public LayerMask targetMask;
 	public LayerMask obstacleMask;
 
-	[SerializeField] private Transform target;
+	[HideInInspector]
+	public List<Transform> visibleTargets = new List<Transform>();
 
 	public float meshResolution;
 	public int edgeResolveIterations;
@@ -26,72 +24,64 @@ public class FieldOfView : MonoBehaviour {
 	public MeshFilter viewMeshFilter;
 	Mesh viewMesh;
 
-	public EnemyAttack enemyattacks;
+	NavMeshAgent nma;
+	float origSpeed;
 
 	void Start() {
 		viewMesh = new Mesh ();
 		viewMesh.name = "View Mesh";
 		viewMeshFilter.mesh = viewMesh;
+		nma = GetComponent<NavMeshAgent>();
+		origSpeed = nma.speed;
 
-		enemyattacks = GetComponent<EnemyAttack>();
+		StartCoroutine ("FindTargetsWithDelay", .2f);
 	}
 
-	private void Update()
-	{
 
-		visibleViewAngle = actualViewAngle - 2;
-
-		if (enemyattacks.seen == false)
+	IEnumerator FindTargetsWithDelay(float delay) {
+		while (true) {
+			yield return new WaitForSeconds (delay);
 			FindVisibleTargets();
-		else
-		{
-			transform.LookAt(target);
-
-			if (Vector3.Distance(target.position, transform.position) > agroLostRadius)
-			{
-				Debug.Log("Lost Player");
-				enemyattacks.seen = false;
-				enemyattacks.targetNotFound();
-			}
 		}
 	}
 
-	void LateUpdate()
-	{
+	void LateUpdate() {
 		DrawFieldOfView ();
 	}
 
-	void FindVisibleTargets()
-	{
+	void FindVisibleTargets() {
+		visibleTargets.Clear ();
 		Collider[] targetsInViewRadius = Physics.OverlapSphere (transform.position, viewRadius, targetMask);
 
-		for (int i = 0; i < targetsInViewRadius.Length; i++)
-		{
-			target = targetsInViewRadius [i].transform;
+		for (int i = 0; i < targetsInViewRadius.Length; i++) {
+			Transform target = targetsInViewRadius [i].transform;
 			Vector3 dirToTarget = (target.position - transform.position).normalized;
-
-			if (Vector3.Angle (transform.forward, dirToTarget) < actualViewAngle / 2)
-			{
+			if (Vector3.Angle (transform.forward, dirToTarget) < viewAngle / 2) {
 				float dstToTarget = Vector3.Distance (transform.position, target.position);
-
-				if (!Physics.Raycast (transform.position, dirToTarget, dstToTarget, obstacleMask) && target.CompareTag("Player"))
-				{
-					Debug.Log("Found Player");
-					enemyattacks.seen = true;
-					enemyattacks.targetFound();
+				if (!Physics.Raycast (transform.position, dirToTarget, dstToTarget, obstacleMask)) {
+					visibleTargets.Add (target);
+					if (target.tag == "Player")
+					{
+						targetFound();
+						transform.LookAt(target);
+						break;
+					}
+					else
+					{
+						targetNotFound();
+					}
 				}
-				
 			}
 		}
 	}
 
 	void DrawFieldOfView() {
-		int stepCount = Mathf.RoundToInt(visibleViewAngle * meshResolution);
-		float stepAngleSize = visibleViewAngle / stepCount;
+		int stepCount = Mathf.RoundToInt(viewAngle * meshResolution);
+		float stepAngleSize = viewAngle / stepCount;
 		List<Vector3> viewPoints = new List<Vector3> ();
 		ViewCastInfo oldViewCast = new ViewCastInfo ();
 		for (int i = 0; i <= stepCount; i++) {
-			float angle = transform.eulerAngles.y - visibleViewAngle / 2 + stepAngleSize * i;
+			float angle = transform.eulerAngles.y - viewAngle / 2 + stepAngleSize * i;
 			ViewCastInfo newViewCast = ViewCast (angle);
 
 			if (i > 0) {
@@ -202,5 +192,17 @@ public class FieldOfView : MonoBehaviour {
 		}
 	}
 
-	
+	public void targetFound()
+	{
+		Debug.Log("Target Found!");
+		nma.speed = 0;
+		nma.isStopped = true;
+		
+	}
+
+	public void targetNotFound()
+	{
+		nma.isStopped = false;
+		nma.speed = origSpeed;
+	}
 }

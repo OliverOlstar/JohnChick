@@ -9,7 +9,7 @@ public class speedingPlatform : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (!other.CompareTag("PlayerBullet"))
-            other.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * speed); //add force in a direction
+        other.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * speed); //add force in a direction
+            
     }
 }

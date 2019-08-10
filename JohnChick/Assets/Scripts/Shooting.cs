@@ -7,10 +7,8 @@ public class Shooting : MonoBehaviour
 {
     [Header("Shooting")]
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private List<Transform> muzzle = new List<Transform>();
+    [SerializeField] private Transform muzzle;
     [SerializeField] private float forwardForce;
-
-    private int curMuzzle = 0;
 
     [Header("Bullet")]
     [SerializeField] private float bulletsPerSec;
@@ -35,18 +33,14 @@ public class Shooting : MonoBehaviour
         while (true)
         {
             GameObject bullet = Instantiate(bulletPrefab);
-            bullet.transform.position = muzzle[curMuzzle].position;
-            bullet.transform.forward = muzzle[curMuzzle].forward;
+            bullet.transform.position = muzzle.position;
+            bullet.transform.forward = muzzle.forward;
             bullet.transform.localScale *= bulletSize;
 
             bullet.GetComponent<Rigidbody>().AddForce(new Vector3(transform.forward.x * forwardForce, 0, transform.forward.z * forwardForce), ForceMode.Impulse);
             Destroy(bullet, bulletLife);
 
             CameraShaker.Instance.ShakeOnce(1, 2, 0.1f, 0.15f);
-
-            curMuzzle++;
-            if (curMuzzle == muzzle.Count)
-                curMuzzle = 0;
 
             yield return new WaitForSeconds(1f / bulletsPerSec);
         }

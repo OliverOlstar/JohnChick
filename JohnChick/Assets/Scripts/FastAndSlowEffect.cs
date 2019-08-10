@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class FastAndSlowEffect : MonoBehaviour
 {
-    public float timeScale = 1f;
+    [SerializeField] private float timeScale = 1f;
     private float minTimeScale = 0;
     private float maxTimeScale = 2;
 
@@ -16,7 +16,6 @@ public class FastAndSlowEffect : MonoBehaviour
     [SerializeField] private NavMeshAgent navMeshAgent;
     [SerializeField] private MovingPlatform movingPlatform;
     [SerializeField] private speedingPlatform speedingPlatform;
-    [SerializeField] private Fan fan;
 
     private Vector3 DefaultVelocity;
 
@@ -26,8 +25,6 @@ public class FastAndSlowEffect : MonoBehaviour
     private float DefaultplatformSpeed;
 
     private float DefaultSpeedPlatform;
-
-    private float DefaultFanSpeed;
 
     private void Start()
     {
@@ -50,11 +47,6 @@ public class FastAndSlowEffect : MonoBehaviour
         {
             DefaultWaitToGoBack = movingPlatform.waitToGoBack;
             DefaultplatformSpeed = movingPlatform.platformSpeed;
-        }
-
-        if (fan)
-        {
-            DefaultFanSpeed = fan.speed;
         }
     }
 
@@ -89,12 +81,6 @@ public class FastAndSlowEffect : MonoBehaviour
         {
             movingPlatform.waitToGoBack = DefaultWaitToGoBack / timeScale;
             movingPlatform.platformSpeed = DefaultplatformSpeed * timeScale;
-        }
-
-        if (fan)
-        {
-            fan.speed = DefaultFanSpeed * (timeScale + 0.1f);
-            fan.changeSize((int)timeScale);
         }
     }
 }

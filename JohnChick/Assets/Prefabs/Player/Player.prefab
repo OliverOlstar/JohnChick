@@ -171,10 +171,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 564055542447235845, guid: fb987d867e15f2b408a8732e95813574,
     type: 3}
-  muzzle:
-  - {fileID: 1267405008}
-  forwardForce: 32
-  bulletsPerSec: 2
+  muzzle: {fileID: 1267405008}
+  forwardForce: 20
+  bulletsPerSec: 8
   bulletLife: 2
   bulletSize: 1
 --- !u!1 &7311742414132771571
@@ -320,7 +319,7 @@ GameObject:
   - component: {fileID: 7311742414718083475}
   - component: {fileID: 752759438}
   - component: {fileID: 1429260484}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -357,7 +356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 50
   maxSpeed: 6
-  jumpForce: 1200
+  jumpForce: 1000
   rayDistance: 0.3
   _rb: {fileID: 7311742414718083475}
 --- !u!54 &7311742414718083475

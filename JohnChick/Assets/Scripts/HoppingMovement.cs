@@ -29,8 +29,6 @@ public class HoppingMovement : MonoBehaviour
     
     void Update()
     {
-        transform.localPosition = new Vector3(0, transform.localPosition.y, 0);
-        
         //Get Speed
         if (speedSourceNav)
         {
@@ -117,7 +115,8 @@ public class HoppingMovement : MonoBehaviour
                 _rb.velocity = newVelocity;
             }
         }
-        
+
+
         transform.localPosition = new Vector3(transform.localPosition.x, Mathf.Clamp(transform.localPosition.y, 0, jumpHeight), transform.localPosition.z);
     }
 }
