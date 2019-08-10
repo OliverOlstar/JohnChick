@@ -45,6 +45,8 @@ GameObject:
   - component: {fileID: 6507390159337366872}
   - component: {fileID: 6421784760308867122}
   - component: {fileID: 6898401940657780640}
+  - component: {fileID: 7307450263499499457}
+  - component: {fileID: 1640517346828498337}
   m_Layer: 12
   m_Name: Enemy(Pidgeon)
   m_TagString: Untagged
@@ -189,6 +191,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seen: 0
+--- !u!114 &7307450263499499457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6174544954568680378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca653cac50f5524195221e1f8174c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeScale: 1
+  rigidbody: {fileID: 0}
+  navMeshAgent: {fileID: 0}
+  movingPlatform: {fileID: 0}
+  speedingPlatform: {fileID: 0}
+  fan: {fileID: 0}
+--- !u!114 &1640517346828498337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6174544954568680378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3a70435afa6144ab056f9dc773446b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationTime: 1
+  threshold: 1.5
 --- !u!1 &7008355728789433688
 GameObject:
   m_ObjectHideFlags: 0

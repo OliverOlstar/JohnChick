@@ -6,7 +6,6 @@ public class HighlightObject : MonoBehaviour
     public float animationTime = 1f;
     public float threshold = 1.5f;
 
-    private bool is_mouseover;
     private FastAndSlowEffect fastSlowEffect;
     private HighlightController controller;
     private Material material;
@@ -14,7 +13,6 @@ public class HighlightObject : MonoBehaviour
     private Color selectedColor;
     private Color fastColor;
     private Color slowColor;
-
     
     void Awake()
     {
@@ -43,7 +41,7 @@ public class HighlightObject : MonoBehaviour
             FastHighlight();
         if (fastSlowEffect.timeScale < 1)
             SlowHighlight();
-        if (fastSlowEffect.timeScale == 1 && !is_mouseover)
+        if (fastSlowEffect.timeScale == 1)
             StopHighlight();
 
     }
@@ -68,14 +66,12 @@ public class HighlightObject : MonoBehaviour
         if (fastSlowEffect.timeScale == 1)
         {
             controller.SelectObj(this);
-            is_mouseover = true;
         }
     }
 
     private void OnMouseExit()
     {
         StopHighlight();
-        is_mouseover = false;
     }
 
     public void FastHighlight()

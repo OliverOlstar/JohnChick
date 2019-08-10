@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7303027374441326003}
   - component: {fileID: 269734610146441360}
   - component: {fileID: 1008709913887679277}
+  - component: {fileID: 4149712836161715595}
   m_Layer: 0
   m_Name: MudBallZ
   m_TagString: Untagged
@@ -124,3 +125,21 @@ MonoBehaviour:
   resilience: 3
   isEnemy: 0
   gameManager: {fileID: 0}
+--- !u!114 &4149712836161715595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3533646088721872925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca653cac50f5524195221e1f8174c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeScale: 1
+  rigidbody: {fileID: 269734610146441360}
+  navMeshAgent: {fileID: 0}
+  movingPlatform: {fileID: 0}
+  speedingPlatform: {fileID: 0}
+  fan: {fileID: 0}
