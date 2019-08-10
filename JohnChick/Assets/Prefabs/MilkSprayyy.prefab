@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8431876344342355426}
   - component: {fileID: 6809266897851858457}
   - component: {fileID: 5465457504686219633}
+  - component: {fileID: 5281227707813543433}
   m_Layer: 0
   m_Name: MilkSprayyy
   m_TagString: Untagged
@@ -144,3 +145,17 @@ MonoBehaviour:
   movingPlatform: {fileID: 0}
   speedingPlatform: {fileID: 0}
   fan: {fileID: 0}
+--- !u!114 &5281227707813543433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5082221112435382305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3a70435afa6144ab056f9dc773446b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationTime: 1
+  threshold: 1.5
