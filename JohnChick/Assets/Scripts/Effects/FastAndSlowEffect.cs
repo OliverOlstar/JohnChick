@@ -19,6 +19,7 @@ public class FastAndSlowEffect : MonoBehaviour
     [SerializeField] private Fan fan;
     [SerializeField] private ParticleSystem particles;
     [SerializeField] private Rotate rotations;
+    [SerializeField] private AudioSource audio;
 
     private Vector3 DefaultVelocity;
 
@@ -33,6 +34,8 @@ public class FastAndSlowEffect : MonoBehaviour
     private float DefaultParticleSpeed;
 
     private float DefaultRotateSpeed;
+
+    private float DefaultAudioVolume;
 
     private void Start()
     {
@@ -70,6 +73,11 @@ public class FastAndSlowEffect : MonoBehaviour
         if (rotations)
         {
             DefaultRotateSpeed = rotations.rotSpeed;
+        }
+
+        if (audio)
+        {
+            DefaultAudioVolume = audio.volume;
         }
     }
 
@@ -120,6 +128,12 @@ public class FastAndSlowEffect : MonoBehaviour
         if (rotations)
         {
             rotations.rotSpeed = DefaultRotateSpeed * (timeScale + 0.1f);
+        }
+
+        if (audio)
+        {
+            audio.volume = DefaultAudioVolume * (timeScale / 2f + 1f);
+            DefaultAudioVolume = audio.volume;
         }
     }
 }
