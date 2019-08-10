@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2652898820396653646}
   - component: {fileID: 8431876344342355426}
   - component: {fileID: 6809266897851858457}
+  - component: {fileID: 5465457504686219633}
   m_Layer: 0
   m_Name: MilkSprayyy
   m_TagString: Untagged
@@ -124,3 +125,21 @@ MonoBehaviour:
   resilience: 2
   isEnemy: 0
   gameManager: {fileID: 0}
+--- !u!114 &5465457504686219633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5082221112435382305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca653cac50f5524195221e1f8174c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeScale: 1
+  rigidbody: {fileID: 8431876344342355426}
+  navMeshAgent: {fileID: 0}
+  movingPlatform: {fileID: 0}
+  speedingPlatform: {fileID: 0}
+  fan: {fileID: 0}
