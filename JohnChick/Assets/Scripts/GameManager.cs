@@ -159,11 +159,20 @@ public class GameManager : MonoBehaviour
     public void Pause()
     {
         Time.timeScale = 0;
+        Button[] buttons = FindObjectOfType<Canvas>().GetComponentsInChildren<Button>();
+        buttons[0].enabled = true;
+        buttons[0].onClick.AddListener(Resume);
+        buttons[1].enabled = true;
+        buttons[1].onClick.AddListener(ToTitle);
+
     }
 
     public void Resume()
     {
         Time.timeScale = 1;
+        Button[] buttons = FindObjectOfType<Canvas>().GetComponentsInChildren<Button>();
+        buttons[0].enabled = false;
+        buttons[1].enabled = false;
     }
 
 }
