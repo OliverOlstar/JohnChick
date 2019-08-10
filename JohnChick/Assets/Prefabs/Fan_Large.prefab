@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4739752261609632846}
   - component: {fileID: 8418066932780888875}
   - component: {fileID: 3544775127849400990}
-  - component: {fileID: 76653795}
+  - component: {fileID: 3136462368533258134}
   m_Layer: 0
   m_Name: Fan_low
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &76653795
+--- !u!114 &3136462368533258134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,10 +87,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4328978645439369933}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76ace11deacb5164a9bb8703972f44e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 3440ec86a158a7e45a44efec308806f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotations: {x: 0, y: 1, z: 0}
+  rotDir: {x: 1, y: 0, z: 0}
   rotSpeed: 5
 --- !u!1 &4576257813498345548
 GameObject:
@@ -160,7 +160,8 @@ MonoBehaviour:
   speedingPlatform: {fileID: 0}
   fan: {fileID: 845772815927590246}
   particles: {fileID: 4370869774862126843}
-  rotations: {fileID: 76653795}
+  rotations: {fileID: 3136462368533258134}
+  audio: {fileID: 0}
 --- !u!23 &3808072207890144240
 MeshRenderer:
   m_ObjectHideFlags: 0
