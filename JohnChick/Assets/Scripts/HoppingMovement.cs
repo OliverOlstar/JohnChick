@@ -15,6 +15,7 @@ public class HoppingMovement : MonoBehaviour
     [SerializeField] private float jumpHeight = 5f;
     [SerializeField] private float rayCastDistance = 1f;
     private Rigidbody _rb;
+    [SerializeField]private LayerMask raycastLayers;
 
     [Space]
     [SerializeField] private Rigidbody speedSourceRb;
@@ -111,7 +112,7 @@ public class HoppingMovement : MonoBehaviour
     {
         if (speed > 0.1f)
         {
-            if (Physics.Raycast(transform.position, Vector3.down, rayCastDistance))
+            if (Physics.Raycast(transform.position, Vector3.down, rayCastDistance, raycastLayers))
             {
                 Vector3 newVelocity = Vector3.up * jumpHeight * (speed / 2 + 0.5f);
                 _rb.velocity = newVelocity;

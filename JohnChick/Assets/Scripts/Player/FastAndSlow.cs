@@ -5,6 +5,7 @@ using UnityEngine;
 public class FastAndSlow : MonoBehaviour
 {
     [SerializeField] private float fastAndSlowScale = 1;
+    [SerializeField] private GameObject effect;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,6 +17,10 @@ public class FastAndSlow : MonoBehaviour
         }
 
         if (!other.CompareTag("Player") && !other.CompareTag("EnviromentCollider"))
+        {
+            Transform fx = Instantiate(effect).transform;
+            fx.position = transform.position;
             Destroy(this.gameObject);
+        }
     }
 }

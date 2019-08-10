@@ -81,6 +81,9 @@ MonoBehaviour:
   returnTipSpeed: 80
   jumpHeight: 2
   rayCastDistance: 0.65
+  raycastLayers:
+    serializedVersion: 2
+    m_Bits: 9217
   speedSourceRb: {fileID: 0}
   speedSourceNav: {fileID: 0}
   speed: 1
