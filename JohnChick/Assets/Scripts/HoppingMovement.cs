@@ -18,7 +18,7 @@ public class HoppingMovement : MonoBehaviour
 
     [Space]
     [SerializeField] private Rigidbody speedSourceRb;
-    [SerializeField] private NavMeshAgent speedSourceNav;
+    public NavMeshAgent speedSourceNav;
     [HideInInspector] public float speed = 1;
 
     void Start()

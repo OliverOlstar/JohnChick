@@ -14,9 +14,8 @@ public class NPCSimplePatrol : MonoBehaviour
 
 	[SerializeField]
 	float _switchProbability = 0.2f;
-
-	[SerializeField]
-	List<Waypoints> _patrolPoints;
+    
+	public Waypoints[] _patrolPoints;
 
 	NavMeshAgent _navMeshAgent;
 	int _currentPatrolIndex;
@@ -43,7 +42,7 @@ public class NPCSimplePatrol : MonoBehaviour
 		}
 		else
 		{
-			if (_patrolPoints != null && _patrolPoints.Count >=2 )
+			if (_patrolPoints != null && _patrolPoints.Length >=2 )
 			{
 				_currentPatrolIndex = 0;
 				SetDestination();
@@ -127,13 +126,13 @@ public class NPCSimplePatrol : MonoBehaviour
 
 		if (_patrolForward)
 		{
-			_currentPatrolIndex = (_currentPatrolIndex + 1) % _patrolPoints.Count;
+			_currentPatrolIndex = (_currentPatrolIndex + 1) % _patrolPoints.Length;
 		}
 		else
 		{
 			if (--_currentPatrolIndex < 0)
 			{
-				_currentPatrolIndex = _patrolPoints.Count - 1;
+				_currentPatrolIndex = _patrolPoints.Length - 1;
 			}
 		}
 	}
