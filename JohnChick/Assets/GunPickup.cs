@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GunPickup : MonoBehaviour
 {
+	public PlayerAiming pa;
 	private void OnCollisionEnter(Collision col)
 	{
 		if (col.gameObject.tag == "Gun Pickup")
