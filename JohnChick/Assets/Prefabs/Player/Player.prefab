@@ -282,7 +282,6 @@ GameObject:
   - component: {fileID: 7311742414718083474}
   - component: {fileID: 7311742414718083475}
   - component: {fileID: 1429260484}
-  - component: {fileID: 6288002974103926526}
   - component: {fileID: 1551307435}
   m_Layer: 11
   m_Name: Player
@@ -357,19 +356,6 @@ MonoBehaviour:
   deadPrefab: {fileID: 1775455001712642510, guid: 3510fa02c53554b41a27b2b6055cf1d9,
     type: 3}
   forceMult: 5
---- !u!114 &6288002974103926526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7311742414718083484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 295f3787e9ae33a4d992909697038981, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pa: {fileID: 1592691105}
 --- !u!135 &1551307435
 SphereCollider:
   m_ObjectHideFlags: 0
