@@ -12,7 +12,7 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] private GameObject deadPrefab;
     [SerializeField] private float forceMult;
 
-    public void Damage(Vector3 pForce)
+    public void KillPlayer(Vector3 pForce)
     {
         if (dead) return;
 
