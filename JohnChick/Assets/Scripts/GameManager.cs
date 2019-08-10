@@ -109,6 +109,9 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        RawImage[] titleRawImg = FindObjectOfType<Canvas>().GetComponentsInChildren<RawImage>();
+        titleRawImg[1].enabled = false;
+        titleRawImg[2].enabled = true;
         currentLevel = 1;
         score = 0;
         SceneManager.LoadScene("Level1");
