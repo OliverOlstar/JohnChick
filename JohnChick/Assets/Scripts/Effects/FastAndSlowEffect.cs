@@ -18,7 +18,7 @@ public class FastAndSlowEffect : MonoBehaviour
     [SerializeField] private speedingPlatform speedingPlatform;
     [SerializeField] private Fan fan;
     [SerializeField] private ParticleSystem particles;
-    [SerializeField] private Rotate rotations;
+    [SerializeField] private Rotating rotations;
     [SerializeField] private AudioSource audio;
 
     private Vector3 DefaultVelocity;
@@ -33,6 +33,10 @@ public class FastAndSlowEffect : MonoBehaviour
     private float DefaultFanSpeed;
 
     private float DefaultAudioVolume;
+
+    private float DefaultParticleSpeed;
+
+    private float DefaultRotateSpeed;
 
     private void Start()
     {
