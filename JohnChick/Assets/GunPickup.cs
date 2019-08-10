@@ -13,7 +13,7 @@ public class GunPickup : MonoBehaviour
 
 	private void OnCollisionEnter(Collision col)
 	{
-		if (col.gameObject.tag == "Gun")
+		if (col.gameObject.tag == "Gun Pickup")
 		{
 			col.gameObject.transform.parent = muzzle.transform;
 			col.transform.position.Set(muzzle.transform.position.x, muzzle.transform.position.y, muzzle.transform.position.z);
