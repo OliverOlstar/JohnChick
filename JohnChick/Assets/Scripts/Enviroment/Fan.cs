@@ -6,6 +6,12 @@ public class Fan : MonoBehaviour
 {
     public float speed = 30f;
     [SerializeField] private List<float> windLength = new List<float>();
+    private Vector3 defaultScale;
+
+    private void Start()
+    {
+        defaultScale = transform.localScale;
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -17,6 +23,6 @@ public class Fan : MonoBehaviour
 
     public void changeSize(int pSize)
     {
-            transform.localScale = new Vector3(1, 1, windLength[pSize]);
+            transform.localScale = new Vector3(defaultScale.x, defaultScale.y, defaultScale.z * windLength[pSize]);
     }
 }
