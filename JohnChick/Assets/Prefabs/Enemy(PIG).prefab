@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8630018065853727011}
   - component: {fileID: 1668342140569337896}
   - component: {fileID: 6409648525524387374}
-  - component: {fileID: 6115942698210267010}
+  - component: {fileID: 3070927418695687824}
   m_Layer: 12
   m_Name: Enemy(PIG)
   m_TagString: Untagged
@@ -204,6 +204,15 @@ MonoBehaviour:
   movingPlatform: {fileID: 0}
   speedingPlatform: {fileID: 0}
   fan: {fileID: 0}
+--- !u!114 &3070927418695687824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152991391245805355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb410568653473f49b900f94448dc2a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
