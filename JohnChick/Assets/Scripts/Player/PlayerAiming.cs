@@ -50,12 +50,14 @@ public class PlayerAiming : MonoBehaviour
                 _shooting.muzzleFlash = fastMuzzleFlash;
                 _shooting.StopShooting();
                 _shooting.StartShooting(fastBullet);
+                //choose the clip
             }
             else if (Input.GetButtonDown("Fire2"))
             {
                 _shooting.muzzleFlash = slowMuzzleFlash;
                 _shooting.StopShooting();
                 _shooting.StartShooting(slowBullet);
+                //choose the clip
             }
 
             if (!Input.GetButton("Fire1") && !Input.GetButton("Fire2"))
