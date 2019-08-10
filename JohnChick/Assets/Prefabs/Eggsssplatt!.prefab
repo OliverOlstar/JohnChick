@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2394619116206166651}
   - component: {fileID: 415040180418988902}
   - component: {fileID: 5077656099474077281}
+  - component: {fileID: 4761812805589803705}
   m_Layer: 0
   m_Name: Eggsssplatt!
   m_TagString: Untagged
@@ -127,3 +128,10 @@ MonoBehaviour:
   movingPlatform: {fileID: 0}
   speedingPlatform: {fileID: 0}
   fan: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: bb410568653473f49b900f94448dc2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resilience: 1
+  isEnemy: 0
+  gameManager: {fileID: 6563244090385326202, guid: 0a3c80a5705624741a9b72ec35cebfa7,
+    type: 3}

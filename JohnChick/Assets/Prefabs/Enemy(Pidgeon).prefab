@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 6898401940657780640}
   - component: {fileID: 7307450263499499457}
   - component: {fileID: 1640517346828498337}
+  - component: {fileID: 236599186300167475}
   m_Layer: 12
   m_Name: Enemy(Pidgeon)
   m_TagString: Untagged
@@ -223,6 +224,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationTime: 1
   threshold: 1.5
+  m_Script: {fileID: 11500000, guid: bb410568653473f49b900f94448dc2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resilience: 1
+  isEnemy: 1
+  gameManager: {fileID: 6563244090385326202, guid: 0a3c80a5705624741a9b72ec35cebfa7,
+    type: 3}
 --- !u!1 &7008355728789433688
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7008355728789433688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 167825345793916894}
