@@ -124,7 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resilience: 2
   isEnemy: 0
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 6563244090385326202, guid: 0a3c80a5705624741a9b72ec35cebfa7,
+    type: 3}
 --- !u!114 &5465457504686219633
 MonoBehaviour:
   m_ObjectHideFlags: 0

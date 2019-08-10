@@ -23,7 +23,8 @@ public class Resilience : MonoBehaviour
             {
                 gameManager.score += enemResilience * 5;
 				//Death case
-                c.gameObject.SetActive(false);
+                //c.gameObject.SetActive(false);
+				Destroy(c.gameObject);
             }
 			if (enemResilience - resilience==1)
 			{
