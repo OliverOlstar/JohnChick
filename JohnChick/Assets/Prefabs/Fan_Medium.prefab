@@ -67,6 +67,7 @@ MonoBehaviour:
   movingPlatform: {fileID: 0}
   speedingPlatform: {fileID: 0}
   fan: {fileID: 3679996438731225572}
+  particles: {fileID: 4370869775837506389}
 --- !u!23 &2298233644989965540
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -202,6 +203,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4370869776520776267, guid: d26c6b0041cd182419d398651466a22d,
         type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370869776520776267, guid: d26c6b0041cd182419d398651466a22d,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370869776520776267, guid: d26c6b0041cd182419d398651466a22d,
+        type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
       value: 0.34901962
       objectReference: {fileID: 0}
@@ -220,16 +231,17 @@ PrefabInstance:
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 0.6
       objectReference: {fileID: 0}
-    - target: {fileID: 4370869776520776267, guid: d26c6b0041cd182419d398651466a22d,
-        type: 3}
-      propertyPath: EmissionModule.rateOverTime.minScalar
-      value: 0.2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d26c6b0041cd182419d398651466a22d, type: 3}
 --- !u!4 &7265952160090963800 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7265952161018551878, guid: d26c6b0041cd182419d398651466a22d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1498030366}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4370869775837506389 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4370869776520776267, guid: d26c6b0041cd182419d398651466a22d,
     type: 3}
   m_PrefabInstance: {fileID: 1498030366}
   m_PrefabAsset: {fileID: 0}

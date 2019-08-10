@@ -144,6 +144,7 @@ MonoBehaviour:
   movingPlatform: {fileID: 0}
   speedingPlatform: {fileID: 0}
   fan: {fileID: 845772815927590246}
+  particles: {fileID: 4370869774862126843}
 --- !u!23 &3808072207890144240
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -681,6 +682,12 @@ PrefabInstance:
 --- !u!4 &7265952159523085046 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7265952161018551878, guid: d26c6b0041cd182419d398651466a22d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1730479280}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4370869774862126843 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4370869776520776267, guid: d26c6b0041cd182419d398651466a22d,
     type: 3}
   m_PrefabInstance: {fileID: 1730479280}
   m_PrefabAsset: {fileID: 0}
