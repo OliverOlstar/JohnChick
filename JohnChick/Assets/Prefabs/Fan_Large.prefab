@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4739752261609632846}
   - component: {fileID: 8418066932780888875}
   - component: {fileID: 3544775127849400990}
+  - component: {fileID: 76653795}
   m_Layer: 0
   m_Name: Fan_low
   m_TagString: Untagged
@@ -77,6 +78,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &76653795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4328978645439369933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ace11deacb5164a9bb8703972f44e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotations: {x: 0, y: 1, z: 0}
+  rotSpeed: 5
 --- !u!1 &4576257813498345548
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +123,7 @@ Transform:
   m_LocalPosition: {x: 5.5, y: 0, z: 5.5}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
-  - {fileID: 3497918961052615247}
+  - {fileID: 4329159737652119919}
   - {fileID: 7265952159523085046}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -145,6 +160,7 @@ MonoBehaviour:
   speedingPlatform: {fileID: 0}
   fan: {fileID: 845772815927590246}
   particles: {fileID: 4370869774862126843}
+  rotations: {fileID: 76653795}
 --- !u!23 &3808072207890144240
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -512,46 +528,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8405003006132684429}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.000000007450581, y: 0.5, z: 0.25}
-  m_LocalScale: {x: 4.556454, y: 4.556454, z: 2.279825}
+  m_LocalRotation: {x: -0, y: 0.000000014901161, z: -0, w: 1}
+  m_LocalPosition: {x: 1, y: 1, z: 0.5}
+  m_LocalScale: {x: 9.112909, y: 9.112909, z: 4.55965}
   m_Children:
   - {fileID: 2308594749641184558}
   - {fileID: 4739752261609632846}
   - {fileID: 6233252079150672761}
   - {fileID: 8709508227719160051}
   - {fileID: 3059150295870201779}
-  m_Father: {fileID: 3497918961052615247}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8607686124229463190
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3497918961052615247}
-  m_Layer: 0
-  m_Name: Fan_Medium
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3497918961052615247
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8607686124229463190}
-  m_LocalRotation: {x: -0, y: 0.000000014901161, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_Children:
-  - {fileID: 4329159737652119919}
   m_Father: {fileID: 7853737996658011691}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
