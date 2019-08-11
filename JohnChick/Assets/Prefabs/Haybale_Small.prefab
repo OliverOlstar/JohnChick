@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3892279549879905702}
   - component: {fileID: 3426193867822566058}
   - component: {fileID: 574363468721075615}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Haybale_Small
   m_TagString: Untagged
   m_Icon: {fileID: 0}

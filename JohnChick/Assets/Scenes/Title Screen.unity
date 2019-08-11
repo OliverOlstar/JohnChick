@@ -486,6 +486,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: JohnChickMain
       objectReference: {fileID: 0}
+    - target: {fileID: 6007080208508509005, guid: 4fbfdedaa29aab444834ced7dfd62fe7,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6007080208508509005, guid: 4fbfdedaa29aab444834ced7dfd62fe7,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 6007080208508509005, guid: 4fbfdedaa29aab444834ced7dfd62fe7,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fbfdedaa29aab444834ced7dfd62fe7, type: 3}
 --- !u!1 &722988522

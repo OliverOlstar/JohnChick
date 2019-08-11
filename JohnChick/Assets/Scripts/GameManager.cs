@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
     // Creates a class variable to keep track of 'GameManager' instance
     static GameManager _instance = null;
 
-    [SerializeField] private int _score;
-    public int levelStartScore;
+    public List<int> _score;
+    public List<int> levelStartScore;
     public Text scoreText;
 
     public int currentLevel ;
@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
                 if (texts[i].tag == "Score")
                 {
                     scoreText = texts[i];
-                    scoreText.text = "Revenge Score: " + score;
+                    scoreText.text = "";
                     break;
                 }
                 else
@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
                     if (texts[i].tag == "Score")
                     {
                         scoreText = texts[i];
-                        scoreText.text = "Revenge Score: " + score;
+                        scoreText.text = "";
                         break;
                     }
                     else
@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour
         titleRawImg[1].enabled = false;
         titleRawImg[2].enabled = true;
         currentLevel = 1;
-        score = 0;
+        _score = null;
         SceneManager.LoadScene("Level1");
     }
 
@@ -133,7 +133,7 @@ public class GameManager : MonoBehaviour
     {
         if (currentLevel != lastLevel)
         {
-            levelStartScore = score;
+            levelStartScore = _score;
             currentLevel++;
             SceneManager.LoadScene("Level" + currentLevel);
         }
@@ -143,7 +143,7 @@ public class GameManager : MonoBehaviour
 
     public void Respawn()
     {
-        score = levelStartScore;
+        _score = levelStartScore;
         SceneManager.LoadScene("Level" + currentLevel);
     }
 
@@ -154,20 +154,6 @@ public class GameManager : MonoBehaviour
 
         // Quits game (only works on EXE, not in Editor)
         Application.Quit();
-    }
-
-    public int score
-    {
-        get { return _score; }      // can also use just 'get;'
-        set
-        {
-            _score = value;       // can also use just 'set;'
-
-            // Check if 'scoreText' was set before trying to update HUD
-            if (scoreText)
-                // Update HUD on every score change
-                scoreText.text = "Revenge Score: " + score;
-        }
     }
 
     public void ToTitle()
