@@ -11,14 +11,15 @@ public class PlayerAiming : MonoBehaviour
     [SerializeField] private ParticleSystem fastMuzzleFlash;
     [SerializeField] private Transform slowMuzzle;
     [SerializeField] private Transform fastMuzzle;
+    [SerializeField] private AudioClip slowClip;
+    [SerializeField] private AudioClip fastClip;
 
     [Header("TURN THIS ON IF YOU SHOULD HAVE GUN AT START OF LEVEL")]
     [SerializeField] private bool HasGun = false;
     [SerializeField] public GameObject myGun;
 
     private bool Gamepad = false;
-
-
+    
     void Start()
     {
         _shooting = GetComponent<Shooting>();
@@ -51,14 +52,15 @@ public class PlayerAiming : MonoBehaviour
             {
                 _shooting.muzzleFlash = fastMuzzleFlash;
                 _shooting.muzzle[0] = fastMuzzle;
+                _shooting.ShootingSound = fastClip;
                 _shooting.StopShooting();
                 _shooting.StartShooting(fastBullet);
-                //choose the clip
             }
             else if (Input.GetButtonDown("Fire2"))
             {
                 _shooting.muzzleFlash = slowMuzzleFlash;
                 _shooting.muzzle[0] = slowMuzzle;
+                _shooting.ShootingSound = slowClip;
                 _shooting.StopShooting();
                 _shooting.StartShooting(slowBullet);
                 //choose the clip
