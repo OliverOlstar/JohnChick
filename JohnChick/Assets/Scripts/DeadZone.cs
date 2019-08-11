@@ -17,7 +17,7 @@ public class DeadZone : MonoBehaviour
 	{
 		if (coll.gameObject.tag=="Player")
 		{
-			gmanage.Respawn();
+			//gmanage.Respawn();
 		}
 	}
 	// Update is called once per frame

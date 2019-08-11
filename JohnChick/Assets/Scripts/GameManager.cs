@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
     // Creates a class variable to keep track of 'GameManager' instance
     static GameManager _instance = null;
 
-    public List<int> _score;
-    public List<int> levelStartScore;
+    [SerializeField] private List<int> _score = new List<int>();
+    //public List<int> levelStartScore;
     public Text scoreText;
 
     public int currentLevel ;
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Failed")
         {
             Button[] buttons = FindObjectOfType<Canvas>().GetComponentsInChildren<Button>();
-            buttons[0].onClick.AddListener(Respawn);
+            //buttons[0].onClick.AddListener(Respawn);
             buttons[1].onClick.AddListener(QuitGame);
         }
         else if (SceneManager.GetActiveScene().name == "End Game")
@@ -93,23 +93,23 @@ public class GameManager : MonoBehaviour
         {
             if (!scoreText)
             {
-                Canvas canvas = FindObjectOfType<Canvas>();
-                if (!canvas)
-                    Debug.Log("No Canvas");
-                Text[] texts = canvas.GetComponentsInChildren<Text>();
-                if (!texts[0])
-                    Debug.Log("No text");
-                for (int i = 0; i < texts.Length; i++)
-                {
-                    if (texts[i].tag == "Score")
-                    {
-                        scoreText = texts[i];
-                        scoreText.text = "";
-                        break;
-                    }
-                    else
-                        Debug.Log("Not Score");
-                }
+                //Canvas canvas = FindObjectOfType<Canvas>();
+                //if (!canvas)
+                //    Debug.Log("No Canvas");
+                ////Text[] texts = canvas.GetComponentsInChildren<Text>();
+                ////if (!texts[0])
+                //    Debug.Log("No text");
+                //for (int i = 0; i < texts.Length; i++)
+                //{
+                //    if (texts[i].tag == "Score")
+                //    {
+                //        scoreText = texts[i];
+                //        scoreText.text = "";
+                //        break;
+                //    }
+                //    else
+                //        Debug.Log("Not Score");
+                //}
             }
         }
     }
@@ -133,7 +133,7 @@ public class GameManager : MonoBehaviour
     {
         if (currentLevel != lastLevel)
         {
-            levelStartScore = _score;
+            //levelStartScore = _score;
             currentLevel++;
             SceneManager.LoadScene("Level" + currentLevel);
         }
@@ -141,11 +141,11 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("EndGame");
     }
 
-    public void Respawn()
-    {
-        _score = levelStartScore;
-        SceneManager.LoadScene("Level" + currentLevel);
-    }
+    //public void Respawn()
+    //{
+    //    _score = levelStartScore;
+    //    SceneManager.LoadScene("Level" + currentLevel);
+    //}
 
     public void QuitGame()
     {
@@ -182,4 +182,18 @@ public class GameManager : MonoBehaviour
         buttonImg[1].enabled = false;
     }
 
+    public void AddTO(int x)
+    {
+        _score.Add(x);
+    }
+
+    public List<int> Gets()
+    {
+        return _score;
+    }
+
+    public int Size()
+    {
+        return _score.Count;
+    }
 }
