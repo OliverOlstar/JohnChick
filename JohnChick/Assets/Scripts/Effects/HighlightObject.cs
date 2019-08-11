@@ -37,11 +37,11 @@ public class HighlightObject : MonoBehaviour
 
     void Update()
     {
-        if (fastSlowEffect.timeScale > 1)
+        if (fastSlowEffect.timeScale > 0.8)
             FastHighlight();
-        if (fastSlowEffect.timeScale < 1)
+        if (fastSlowEffect.timeScale < 1.2)
             SlowHighlight();
-        if (fastSlowEffect.timeScale == 1)
+        if (fastSlowEffect.timeScale <=0.8 && fastSlowEffect.timeScale >=1.2)
             StopHighlight();
         if(tag == "Player")
         {
