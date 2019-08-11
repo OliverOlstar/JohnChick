@@ -22,9 +22,10 @@ public class GameManager : MonoBehaviour
     {
 
         // Check if 'GameManager' instance exists
-        if (instance)
+        if (instance) { 
             // 'GameManager' already exists, delete copy
             Destroy(gameObject);
+        }
         else
         {
             // 'GameManager' does not exist so assign a reference to it
@@ -33,6 +34,8 @@ public class GameManager : MonoBehaviour
             // Do not destroy 'GameManager' on Scene change
             DontDestroyOnLoad(this);
         }
+
+        _score = FindObjectOfType<ScoreCont>()._score;
     }
 
     // Update is called once per frame
@@ -44,10 +47,10 @@ public class GameManager : MonoBehaviour
         {
             Application.Quit();
         }
-        else if (Input.GetKeyDown(KeyCode.P))
-        {
-            Pause();
-        }
+        //else if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //    Pause();
+        //}
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
             if (SceneManager.GetActiveScene().name == "EndGame")
@@ -137,9 +140,13 @@ public class GameManager : MonoBehaviour
             //levelStartScore = _score;
             currentLevel++;
             SceneManager.LoadScene("Level" + currentLevel);
+            _score = FindObjectOfType<ScoreCont>()._score;
         }
         else
+        {
             SceneManager.LoadScene("EndGame");
+            _score = FindObjectOfType<ScoreCont>()._score;
+        }
     }
 
     public void Respawn()
@@ -162,18 +169,18 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Title Screen");
     }
 
-    public void Pause()
-    {
-        Time.timeScale = 0;
-        Button[] buttons = FindObjectOfType<Canvas>().GetComponentsInChildren<Button>();
-       RawImage[] buttonImg = FindObjectOfType<Canvas>().GetComponentsInChildren<RawImage>();
+    //public void Pause()
+    //{
+    //    Time.timeScale = 0;
+    //    Button[] buttons = FindObjectOfType<Canvas>().GetComponentsInChildren<Button>();
+    //   RawImage[] buttonImg = FindObjectOfType<Canvas>().GetComponentsInChildren<RawImage>();
 
-        buttons[0].onClick.AddListener(Resume);
-        buttons[1].onClick.AddListener(ToTitle);
-        buttonImg[0].enabled = true;
-        buttonImg[1].enabled = true;
+    //    buttons[0].onClick.AddListener(Resume);
+    //    buttons[1].onClick.AddListener(ToTitle);
+    //    buttonImg[0].enabled = true;
+    //    buttonImg[1].enabled = true;
 
-    }
+    //}
 
     public void Resume()
     {

@@ -13,13 +13,10 @@ public class DeadZone : MonoBehaviour
 		//gmanage = GetComponent<GameManager>();
     }
 
-	private void OnTiggerEnter(Collider other)
+	private void OnTriggerEnter(Collider other)
 	{
-        Debug.Log("Call 1");
-
 		if (other.CompareTag("Player"))
         {
-            Debug.Log("Call 2");
             gmanage.Respawn();
 		}
 	}

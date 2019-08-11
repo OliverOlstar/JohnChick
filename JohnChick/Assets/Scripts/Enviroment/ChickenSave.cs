@@ -7,8 +7,8 @@ public class ChickenSave : MonoBehaviour
 
 	public float angle;
 	public float force;
+    public ScoreCont SC;
 	Rigidbody rb;
-	private GameManager gM;
     public int me = 0;
 
 	private void OnTriggerEnter(Collider other)
@@ -17,16 +17,15 @@ public class ChickenSave : MonoBehaviour
 		{
 			Vector3 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
 			rb.AddForce(dir * force);
-            gM._score.Add(me);
+            SC._score.Add(me);
 			Destroy(gameObject, 3);
 		}
 	}
-
-	// Start is called before the first frame update
+    
 	void Start()
     {
 		rb = GetComponent<Rigidbody>();
-		gM = FindObjectOfType<GameManager>().GetComponent<GameManager>();
+        SC = FindObjectOfType<ScoreCont>();
 	}
 
     // Update is called once per frame
