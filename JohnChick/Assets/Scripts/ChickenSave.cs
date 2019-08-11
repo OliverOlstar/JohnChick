@@ -12,8 +12,7 @@ public class ChickenSave : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		Debug.Log(other.tag);
-		if (other.tag == "Player")
+		if (other.CompareTag("Player"))
 		{
 			Vector3 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
 			rb.AddForce(dir * force);
