@@ -8,7 +8,7 @@ public class ChickenSave : MonoBehaviour
 	public float angle;
 	public float force;
 	Rigidbody rb;
-	public GameManager gM;
+	private GameManager gM;
     public int me = 0;
 
 	private void OnTriggerEnter(Collider other)
