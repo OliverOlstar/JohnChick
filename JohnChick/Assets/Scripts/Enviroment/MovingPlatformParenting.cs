@@ -6,7 +6,7 @@ public class MovingPlatformParenting : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Enviornment"))
         {
             other.transform.parent = transform;
         }
@@ -14,7 +14,7 @@ public class MovingPlatformParenting : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Enviornment"))
         {
             other.transform.parent = null;
         }

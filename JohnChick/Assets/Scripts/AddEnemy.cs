@@ -15,6 +15,8 @@ public class AddEnemy : MonoBehaviour
         prefab.transform.position = transform.position;
         prefab.transform.rotation = transform.rotation;
 
+        prefab.GetComponent<MyModel>().myModel = GetComponent<MeshRenderer>();
+
         GetComponent<Follow>().target = prefab.transform;
         GetComponentInChildren<HoppingMovement>().speedSourceNav = prefab.GetComponent<NavMeshAgent>();
 

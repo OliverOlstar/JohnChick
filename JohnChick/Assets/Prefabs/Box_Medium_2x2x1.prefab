@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 9119587138064727105}
   - component: {fileID: 9119587138064727106}
   - component: {fileID: 9119587138064727107}
-  - component: {fileID: 945102757446830171}
   m_Layer: 0
   m_Name: Box_Medium_2x2x1
   m_TagString: Untagged
@@ -309,24 +308,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
---- !u!114 &945102757446830171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9119587138064727116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdb94b184a711864daf7fe590131326b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playsound: {fileID: 0}
-  boxEffect:
-  - {fileID: 8300000, guid: 5d247d4f71d7ef946af9beb5ac09872b, type: 3}
-  - {fileID: 8300000, guid: e2cf2e3c45c61054f9d5f472d8f18fc8, type: 3}
-  - {fileID: 8300000, guid: 8c9b89fc9ce78c24598d19169aa2eda0, type: 3}
-  - {fileID: 8300000, guid: 1083f6135b1ba1046bfa4e21ae8e9701, type: 3}
-  - {fileID: 8300000, guid: 6916b31a423dd2349a9049357700c797, type: 3}
-  - {fileID: 8300000, guid: 8517e33223a20034c875ddf967c7eb90, type: 3}
-  velocitaCollisione: 0.3

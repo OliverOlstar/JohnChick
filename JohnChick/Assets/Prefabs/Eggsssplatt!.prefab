@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2394619116206166651}
   - component: {fileID: 415040180418988902}
   - component: {fileID: 5077656099474077281}
-  - component: {fileID: 1479955881341591852}
   m_Layer: 0
   m_Name: Eggsssplatt!
   m_TagString: Untagged
@@ -128,20 +127,6 @@ MonoBehaviour:
   movingPlatform: {fileID: 0}
   speedingPlatform: {fileID: 0}
   fan: {fileID: 0}
---- !u!114 &1479955881341591852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8747432685978493610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb410568653473f49b900f94448dc2a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resilience: 1
-  isEnemy: 0
-  isBullet: 1
-  gameManager: {fileID: 6563244090385326202, guid: 0a3c80a5705624741a9b72ec35cebfa7,
-    type: 3}
+  particles: {fileID: 0}
+  rotations: {fileID: 0}
+  audio: {fileID: 0}
