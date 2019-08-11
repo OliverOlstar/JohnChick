@@ -61,7 +61,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: 60
   force: 800
-  gM: {fileID: 0}
   me: 0
 --- !u!54 &1928912137198362955
 Rigidbody:
@@ -92,7 +91,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a3be1a0defcde2c418f1463e5c34d1b4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0065493584
+      value: -0.054
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a3be1a0defcde2c418f1463e5c34d1b4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -100,7 +99,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a3be1a0defcde2c418f1463e5c34d1b4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.028
+      value: 0.515
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a3be1a0defcde2c418f1463e5c34d1b4, type: 3}
       propertyPath: m_LocalRotation.x

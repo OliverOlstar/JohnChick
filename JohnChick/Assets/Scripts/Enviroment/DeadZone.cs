@@ -10,19 +10,17 @@ public class DeadZone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		gmanage = GetComponent<GameManager>();
+		//gmanage = GetComponent<GameManager>();
     }
 
-	private void OnCollisionEnter(Collision coll)
+	private void OnTiggerEnter(Collider other)
 	{
-		if (coll.gameObject.tag=="Player")
-		{
-			//gmanage.Respawn();
+        Debug.Log("Call 1");
+
+		if (other.CompareTag("Player"))
+        {
+            Debug.Log("Call 2");
+            gmanage.Respawn();
 		}
 	}
-	// Update is called once per frame
-	void Update()
-    {
-        
-    }
 }

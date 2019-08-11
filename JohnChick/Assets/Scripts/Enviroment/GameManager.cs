@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     // Creates a class variable to keep track of 'GameManager' instance
     static GameManager _instance = null;
 
-    [SerializeField] private List<int> _score = new List<int>();
+    public List<int> _score = new List<int>();
     //public List<int> levelStartScore;
     public Text scoreText;
 
@@ -113,6 +113,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
     public static GameManager instance
     {
         get { return _instance; }   // can also use just 'get;'
@@ -141,11 +142,11 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("EndGame");
     }
 
-    //public void Respawn()
-    //{
-    //    _score = levelStartScore;
-    //    SceneManager.LoadScene("Level" + currentLevel);
-    //}
+    public void Respawn()
+    {
+        //_score = levelStartScore;
+        SceneManager.LoadScene("Level" + currentLevel);
+    }
 
     public void QuitGame()
     {
@@ -180,20 +181,5 @@ public class GameManager : MonoBehaviour
         RawImage[] buttonImg = FindObjectOfType<Canvas>().GetComponentsInChildren<RawImage>();
         buttonImg[0].enabled = false;
         buttonImg[1].enabled = false;
-    }
-
-    public void AddTO(int x)
-    {
-        _score.Add(x);
-    }
-
-    public List<int> Gets()
-    {
-        return _score;
-    }
-
-    public int Size()
-    {
-        return _score.Count;
     }
 }

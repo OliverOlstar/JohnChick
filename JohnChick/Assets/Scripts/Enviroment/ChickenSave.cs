@@ -17,7 +17,7 @@ public class ChickenSave : MonoBehaviour
 		{
 			Vector3 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
 			rb.AddForce(dir * force);
-			gM.AddTO(me);
+            gM._score.Add(me);
 			Destroy(gameObject, 3);
 		}
 	}
