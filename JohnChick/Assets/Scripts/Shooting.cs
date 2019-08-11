@@ -5,7 +5,7 @@ using EZCameraShake;
 
 public class Shooting : MonoBehaviour
 {
-    private AudioSource playSound;
+    public AudioSource playSound;
     public AudioClip ShootingSound;
     public AudioClip bulletDestroyPig;
 
@@ -23,10 +23,7 @@ public class Shooting : MonoBehaviour
     [SerializeField] private float bulletsPerSec;
     [SerializeField] private float bulletLife;
     [SerializeField] private float bulletSize;
-    private void Start()
-    {
-        playSound.GetComponent<AudioSource>();
-    }
+
     public void StartShooting(GameObject pPrefab = null)
     {
         if (pPrefab != null)

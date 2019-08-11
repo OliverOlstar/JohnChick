@@ -16912,39 +16912,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1505756304104321110, guid: b12640c924630de4290d2c1df64c4876,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 1505756304104321110, guid: b12640c924630de4290d2c1df64c4876,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1505756304104321110, guid: b12640c924630de4290d2c1df64c4876,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1505756302189712381, guid: b12640c924630de4290d2c1df64c4876,
-        type: 3}
-      propertyPath: myGun
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1592691105, guid: b12640c924630de4290d2c1df64c4876, type: 3}
-      propertyPath: HasGun
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7311742414718083474, guid: b12640c924630de4290d2c1df64c4876,
-        type: 3}
-      propertyPath: jumpForce
-      value: 550
-      objectReference: {fileID: 0}
-    - target: {fileID: 1551307435, guid: b12640c924630de4290d2c1df64c4876, type: 3}
-      propertyPath: m_Center.y
-      value: 0.7
-      objectReference: {fileID: 0}
+      propertyPath: fastClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7297caab94c57df40b665016ce7ca9d0, type: 3}
+    - target: {fileID: 1592691105, guid: b12640c924630de4290d2c1df64c4876, type: 3}
+      propertyPath: slowClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f43f3e54af7395a43b42b35ba7f6f8a3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b12640c924630de4290d2c1df64c4876, type: 3}
 --- !u!4 &999086855 stripped

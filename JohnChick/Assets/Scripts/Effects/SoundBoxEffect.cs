@@ -8,25 +8,21 @@ public class SoundBoxEffect : MonoBehaviour
     private int randomTime;
     public AudioSource playsound;
     public AudioClip[] boxEffect;
-    public float velocitaCollisione;
+
+    private float startTime;
+
     void Start()
     {
         playsound =  GetComponent<AudioSource>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
+        startTime = Time.time;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<Rigidbody>().velocity.magnitude > velocitaCollisione)
-            playEffect();      
-
+        if (startTime != Time.time)
+            playEffect();
     }
+
     private void playEffect()
     {
         randomNumberEffect = Random.Range(0, boxEffect.Length);       
