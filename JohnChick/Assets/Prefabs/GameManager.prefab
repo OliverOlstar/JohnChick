@@ -49,7 +49,7 @@ MonoBehaviour:
   levelStartScore: 0
   scoreText: {fileID: 0}
   currentLevel: 1
-  lastLevel: 3
+  lastLevel: 4
 --- !u!114 &6563244090385326180
 MonoBehaviour:
   m_ObjectHideFlags: 0
