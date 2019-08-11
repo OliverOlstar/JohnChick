@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Follow : MonoBehaviour
 {
-    public Transform target;
+    [HideInInspector] public Transform target;
 
     // Start is called before the first frame update
     void Start()

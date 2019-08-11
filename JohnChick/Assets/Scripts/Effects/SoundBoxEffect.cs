@@ -6,7 +6,7 @@ public class SoundBoxEffect : MonoBehaviour
 {
     private int randomNumberEffect;
     private int randomTime;
-    public AudioSource playsound;
+    private AudioSource playsound;
     public AudioClip[] boxEffect;
 
     private float startTime;
