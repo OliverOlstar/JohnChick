@@ -52,7 +52,36 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1083f6135b1ba1046bfa4e21ae8e9701, type: 3}
   - {fileID: 8300000, guid: 6916b31a423dd2349a9049357700c797, type: 3}
   - {fileID: 8300000, guid: 8517e33223a20034c875ddf967c7eb90, type: 3}
-  velocitaCollisione: 0.3
+--- !u!54 &4136082110875267096
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3778479145848223837}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &8117680814420338035
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3778479145848223837}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 9c589d24ed2a1284385ae56e26e1162c, type: 3}
 --- !u!1001 &3778479145848192765
 PrefabInstance:
   m_ObjectHideFlags: 0
