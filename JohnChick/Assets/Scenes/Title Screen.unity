@@ -203,6 +203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 227482080}
+  - component: {fileID: 227482081}
   - component: {fileID: 227482079}
   - component: {fileID: 227482078}
   m_Layer: 0
@@ -234,15 +235,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 948567c9c296e294fa1b79ef6b487890, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2be39583599ff254d9813a702a9a50a9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 100
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -334,6 +335,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &227482081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227482077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de1da2f2063cb8c41bd8c07420560edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 2be39583599ff254d9813a702a9a50a9, type: 3}
+  - {fileID: 8300000, guid: f2664bd4d0b31d849937f88a37bf6125, type: 3}
 --- !u!1001 &375782471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -638,11 +654,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6563244090385326202, guid: 0a3c80a5705624741a9b72ec35cebfa7,
-        type: 3}
-      propertyPath: lastLevel
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a3c80a5705624741a9b72ec35cebfa7, type: 3}

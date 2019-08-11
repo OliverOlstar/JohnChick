@@ -8,7 +8,7 @@ public class ChickenSave : MonoBehaviour
 	public float angle;
 	public float force;
 	Rigidbody rb;
-	public GameManager gM;
+	private GameManager gM;
     public int me = 0;
 
 	private void OnTriggerEnter(Collider other)
@@ -17,7 +17,7 @@ public class ChickenSave : MonoBehaviour
 		{
 			Vector3 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
 			rb.AddForce(dir * force);
-			gM._score.Add(me);
+			gM.AddTO(me);
 			Destroy(gameObject, 3);
 		}
 	}

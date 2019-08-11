@@ -9,16 +9,16 @@ public class SpawnPoint : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine("Spawn");
+        StartCoroutine("Spawn", GM.Gets());
     }
 
-    IEnumerator Spawn()
+    IEnumerator Spawn(List<int> x)
     {
-        while (GM._score.Count > 0)
+        while (x.Count > 0)
         {
             yield return new WaitForSeconds(Random.Range(0.1f, 0.4f));
-            Instantiate(objects[GM._score[0]]);
-            GM._score.Remove(0);
+            Instantiate(objects[x[0]]);
+            x.Remove(0);
         }
     }
 }
