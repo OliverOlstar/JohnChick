@@ -10,9 +10,6 @@ public class GameManager : MonoBehaviour
 {
     // Creates a class variable to keep track of 'GameManager' instance
     static GameManager _instance = null;
-
-    public List<int> _score = new List<int>();
-    //public List<int> levelStartScore;
     public Text scoreText;
 
     public int currentLevel ;
@@ -34,8 +31,6 @@ public class GameManager : MonoBehaviour
             // Do not destroy 'GameManager' on Scene change
             DontDestroyOnLoad(this);
         }
-
-        _score = FindObjectOfType<ScoreCont>()._score;
     }
 
     // Update is called once per frame
@@ -129,7 +124,6 @@ public class GameManager : MonoBehaviour
         titleRawImg[1].enabled = false;
         titleRawImg[2].enabled = true;
         currentLevel = 1;
-        _score = null;
         SceneManager.LoadScene("Level1");
     }
 
@@ -140,12 +134,10 @@ public class GameManager : MonoBehaviour
             //levelStartScore = _score;
             currentLevel++;
             SceneManager.LoadScene("Level" + currentLevel);
-            _score = FindObjectOfType<ScoreCont>()._score;
         }
         else
         {
             SceneManager.LoadScene("EndGame");
-            _score = FindObjectOfType<ScoreCont>()._score;
         }
     }
 

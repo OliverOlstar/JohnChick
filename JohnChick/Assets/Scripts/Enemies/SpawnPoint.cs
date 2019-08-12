@@ -16,7 +16,7 @@ public class SpawnPoint : MonoBehaviour
     IEnumerator SpawnDelay()
     {
         yield return new WaitForSeconds(0.5f);
-        StartCoroutine("Spawn", GM._score);
+        StartCoroutine("Spawn", ScoreCont._score);
     }
 
     IEnumerator Spawn(List<int> x)

@@ -35,6 +35,7 @@ public class PlayerDeath : MonoBehaviour
 
         dead = true;
     }
+
     private void playEffect()
     {
         randomNumberEffect = Random.Range(0, deathEffect.Length);

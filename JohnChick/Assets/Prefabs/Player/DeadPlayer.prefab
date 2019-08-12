@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1775455001712642504}
   - component: {fileID: 9068886350560578734}
   - component: {fileID: 3360243827546306530}
+  - component: {fileID: 9014782582903142417}
   m_Layer: 9
   m_Name: DeadPlayer
   m_TagString: Untagged
@@ -62,6 +63,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.66
   m_Center: {x: 0, y: 0.31, z: -0.13}
+--- !u!114 &9014782582903142417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775455001712642510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0bb87799433a5842ab60daca31cec55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnDelay: 0.6
 --- !u!1001 &1156207819396052065
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,7 +7,6 @@ public class ChickenSave : MonoBehaviour
 
 	public float angle;
 	public float force;
-    public ScoreCont SC;
 	Rigidbody rb;
     public int me = 0;
 
@@ -17,7 +16,7 @@ public class ChickenSave : MonoBehaviour
 		{
 			Vector3 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
 			rb.AddForce(dir * force);
-            SC._score.Add(me);
+            ScoreCont._score.Add(me);
 			Destroy(gameObject, 3);
 		}
 	}
@@ -25,7 +24,6 @@ public class ChickenSave : MonoBehaviour
 	void Start()
     {
 		rb = GetComponent<Rigidbody>();
-        SC = FindObjectOfType<ScoreCont>();
 	}
 
     // Update is called once per frame
