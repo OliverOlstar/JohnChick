@@ -10,9 +10,6 @@ public class GameManager : MonoBehaviour
 {
     // Creates a class variable to keep track of 'GameManager' instance
     static GameManager _instance = null;
-
-    public List<int> _score;
-    public List<int> levelStartScore;
     public Text scoreText;
 
     public int currentLevel ;
@@ -22,9 +19,10 @@ public class GameManager : MonoBehaviour
     {
 
         // Check if 'GameManager' instance exists
-        if (instance)
+        if (instance) { 
             // 'GameManager' already exists, delete copy
             Destroy(gameObject);
+        }
         else
         {
             // 'GameManager' does not exist so assign a reference to it
@@ -44,10 +42,10 @@ public class GameManager : MonoBehaviour
         {
             Application.Quit();
         }
-        else if (Input.GetKeyDown(KeyCode.P))
-        {
-            Pause();
-        }
+        //else if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //    Pause();
+        //}
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
             if (SceneManager.GetActiveScene().name == "EndGame")
@@ -68,7 +66,7 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Failed")
         {
             Button[] buttons = FindObjectOfType<Canvas>().GetComponentsInChildren<Button>();
-            buttons[0].onClick.AddListener(Respawn);
+            //buttons[0].onClick.AddListener(Respawn);
             buttons[1].onClick.AddListener(QuitGame);
         }
         else if (SceneManager.GetActiveScene().name == "End Game")
@@ -93,26 +91,27 @@ public class GameManager : MonoBehaviour
         {
             if (!scoreText)
             {
-                Canvas canvas = FindObjectOfType<Canvas>();
-                if (!canvas)
-                    Debug.Log("No Canvas");
-                Text[] texts = canvas.GetComponentsInChildren<Text>();
-                if (!texts[0])
-                    Debug.Log("No text");
-                for (int i = 0; i < texts.Length; i++)
-                {
-                    if (texts[i].tag == "Score")
-                    {
-                        scoreText = texts[i];
-                        scoreText.text = "";
-                        break;
-                    }
-                    else
-                        Debug.Log("Not Score");
-                }
+                //Canvas canvas = FindObjectOfType<Canvas>();
+                //if (!canvas)
+                //    Debug.Log("No Canvas");
+                ////Text[] texts = canvas.GetComponentsInChildren<Text>();
+                ////if (!texts[0])
+                //    Debug.Log("No text");
+                //for (int i = 0; i < texts.Length; i++)
+                //{
+                //    if (texts[i].tag == "Score")
+                //    {
+                //        scoreText = texts[i];
+                //        scoreText.text = "";
+                //        break;
+                //    }
+                //    else
+                //        Debug.Log("Not Score");
+                //}
             }
         }
     }
+
     public static GameManager instance
     {
         get { return _instance; }   // can also use just 'get;'
@@ -125,7 +124,6 @@ public class GameManager : MonoBehaviour
         titleRawImg[1].enabled = false;
         titleRawImg[2].enabled = true;
         currentLevel = 1;
-        _score = null;
         SceneManager.LoadScene("Level1");
     }
 
@@ -133,17 +131,19 @@ public class GameManager : MonoBehaviour
     {
         if (currentLevel != lastLevel)
         {
-            levelStartScore = _score;
+            //levelStartScore = _score;
             currentLevel++;
             SceneManager.LoadScene("Level" + currentLevel);
         }
         else
+        {
             SceneManager.LoadScene("EndGame");
+        }
     }
 
     public void Respawn()
     {
-        _score = levelStartScore;
+        //_score = levelStartScore;
         SceneManager.LoadScene("Level" + currentLevel);
     }
 
@@ -161,18 +161,18 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Title Screen");
     }
 
-    public void Pause()
-    {
-        Time.timeScale = 0;
-        Button[] buttons = FindObjectOfType<Canvas>().GetComponentsInChildren<Button>();
-       RawImage[] buttonImg = FindObjectOfType<Canvas>().GetComponentsInChildren<RawImage>();
+    //public void Pause()
+    //{
+    //    Time.timeScale = 0;
+    //    Button[] buttons = FindObjectOfType<Canvas>().GetComponentsInChildren<Button>();
+    //   RawImage[] buttonImg = FindObjectOfType<Canvas>().GetComponentsInChildren<RawImage>();
 
-        buttons[0].onClick.AddListener(Resume);
-        buttons[1].onClick.AddListener(ToTitle);
-        buttonImg[0].enabled = true;
-        buttonImg[1].enabled = true;
+    //    buttons[0].onClick.AddListener(Resume);
+    //    buttons[1].onClick.AddListener(ToTitle);
+    //    buttonImg[0].enabled = true;
+    //    buttonImg[1].enabled = true;
 
-    }
+    //}
 
     public void Resume()
     {
@@ -181,5 +181,4 @@ public class GameManager : MonoBehaviour
         buttonImg[0].enabled = false;
         buttonImg[1].enabled = false;
     }
-
 }

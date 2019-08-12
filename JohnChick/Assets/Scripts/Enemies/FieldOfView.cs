@@ -7,15 +7,15 @@ public class FieldOfView : MonoBehaviour {
 
 	public float viewRadius;
 	public float agroLostRadius;
-	[Range(0,360)]
-	public float visibleViewAngle;
+
+	private float visibleViewAngle;
 	[Range(0, 360)]
 	public float actualViewAngle;
 
 	public LayerMask targetMask;
 	public LayerMask obstacleMask;
 
-	[SerializeField] private Transform target;
+	private Transform target;
 
 	public float meshResolution;
 	public int edgeResolveIterations;
@@ -23,12 +23,14 @@ public class FieldOfView : MonoBehaviour {
 
 	public float maskCutawayDst = .1f;
 
-	public MeshFilter viewMeshFilter;
-	Mesh viewMesh;
+	[SerializeField] private MeshFilter viewMeshFilter;
+    private Mesh viewMesh;
 
 	public EnemyAttack enemyattacks;
 
-	void Start() {
+    public float rotationDampening = 2f;
+
+    void Start() {
 		viewMesh = new Mesh ();
 		viewMesh.name = "View Mesh";
 		viewMeshFilter.mesh = viewMesh;
@@ -41,15 +43,16 @@ public class FieldOfView : MonoBehaviour {
 
 		visibleViewAngle = actualViewAngle - 2;
 
-		if (enemyattacks.seen == false)
+		if (enemyattacks.seen == false || target == null)
 			FindVisibleTargets();
 		else
 		{
-			transform.LookAt(target);
+            Quaternion targetRotation = Quaternion.LookRotation((new Vector3(target.position.x, transform.position.y, target.position.z) - transform.position).normalized, Vector3.up);
 
-			if (Vector3.Distance(target.position, transform.position) > agroLostRadius)
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationDampening * Time.deltaTime);
+
+            if (Vector3.Distance(target.position, transform.position) > agroLostRadius)
 			{
-				Debug.Log("Lost Player");
 				enemyattacks.seen = false;
 				enemyattacks.targetNotFound();
 			}
@@ -66,17 +69,16 @@ public class FieldOfView : MonoBehaviour {
 		Collider[] targetsInViewRadius = Physics.OverlapSphere (transform.position, viewRadius, targetMask);
 
 		for (int i = 0; i < targetsInViewRadius.Length; i++)
-		{
-			target = targetsInViewRadius [i].transform;
+        {
+            target = targetsInViewRadius [i].transform;
 			Vector3 dirToTarget = (target.position - transform.position).normalized;
 
 			if (Vector3.Angle (transform.forward, dirToTarget) < actualViewAngle / 2)
-			{
-				float dstToTarget = Vector3.Distance (transform.position, target.position);
+            {
+                float dstToTarget = Vector3.Distance (transform.position, target.position);
 
 				if (!Physics.Raycast (transform.position, dirToTarget, dstToTarget, obstacleMask) && target.CompareTag("Player"))
 				{
-					Debug.Log("Found Player");
 					enemyattacks.seen = true;
 					enemyattacks.targetFound();
 				}

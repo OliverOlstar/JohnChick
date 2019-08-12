@@ -15,7 +15,8 @@ public class NPCSimplePatrol : MonoBehaviour
 	[SerializeField]
 	float _switchProbability = 0.2f;
     
-	public Waypoints[] _patrolPoints;
+    [HideInInspector]
+    public Waypoints[] _patrolPoints;
 
 	NavMeshAgent _navMeshAgent;
 	int _currentPatrolIndex;
@@ -23,44 +24,37 @@ public class NPCSimplePatrol : MonoBehaviour
 	bool _waiting;
 	bool _patrolForward;
 	float _waitTimer;
-
-	//public float moveSpeed;
-    //public Transform player;
-    //public Transform head;
-    //bool pursuing;
-
-
-
-    // Start is called before the first frame update
+    
     void Start()
     {
 		_navMeshAgent = this.GetComponent<NavMeshAgent>();
 
 		if (_navMeshAgent==null)
-		{
-			Debug.LogError("the nav mesh agent component is not attached to " + gameObject.name);
-		}
+            return;
 		else
 		{
-			if (_patrolPoints != null && _patrolPoints.Length >=2 )
+			if (_patrolPoints.Length >= 2)
 			{
 				_currentPatrolIndex = 0;
 				SetDestination();
 			}
-			else
-			{
-				Debug.Log("Insufficient Patrol points for basic patrolling behavious.");
-			}
+            else
+            {
+                _navMeshAgent.speed = 0;
+            }
 		}
     }
-
-
-
-
-    // Update is called once per frame
+    
     void Update()
     {
-		if (_travelling && _navMeshAgent.remainingDistance <= 2.0f)
+        if (_patrolPoints.Length < 2)
+            return;
+
+        if (_navMeshAgent == null)
+            return;
+
+
+        if (_travelling && _navMeshAgent.remainingDistance <= 2.0f)
 		{
 			_travelling = false;
 
@@ -86,14 +80,13 @@ public class NPCSimplePatrol : MonoBehaviour
 
                 ChangePatrolPoint();
 				SetDestination();
-              //  SetChasing();
             }
 		}
     }
  
 	public void SetDestination()
 	{
-		if (_patrolPoints != null)
+		if (_patrolPoints.Length >= 2)
 		{
 			Vector3 targetVector = _patrolPoints[_currentPatrolIndex].transform.position;
 			Quaternion targetVectorDir = _patrolPoints[_currentPatrolIndex].transform.rotation;

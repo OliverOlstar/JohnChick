@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8744227804456279417}
   - component: {fileID: 6615192573472623159}
   - component: {fileID: 8262004545374112869}
-  - component: {fileID: 2252418472643146119}
+  - component: {fileID: 3148717708559894336}
   m_Layer: 0
   m_Name: Box_Small_1x1x1
   m_TagString: Untagged
@@ -294,8 +294,8 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &2252418472643146119
-MeshCollider:
+--- !u!65 &3148717708559894336
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -304,7 +304,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0.5, y: 0.5, z: -0.5}

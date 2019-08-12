@@ -48,7 +48,6 @@ GameObject:
   - component: {fileID: 2340756037948189618}
   - component: {fileID: 9127675484224437679}
   - component: {fileID: 2649773444697680323}
-  - component: {fileID: 6468536632304540162}
   - component: {fileID: 4114172945596731457}
   m_Layer: 12
   m_Name: Enemy(Cow)
@@ -104,21 +103,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewRadius: 9
   agroLostRadius: 10
-  visibleViewAngle: 90
   actualViewAngle: 90
   targetMask:
     serializedVersion: 2
     m_Bits: 2048
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 9239
-  target: {fileID: 0}
+    m_Bits: 9238
   meshResolution: 1
   edgeResolveIterations: 36
   edgeDstThreshold: 25
   maskCutawayDst: 0.1
   viewMeshFilter: {fileID: 5350765961748106626}
   enemyattacks: {fileID: 2340756037948189618}
+  rotationDampening: 4
 --- !u!54 &4797518963060053278
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -163,12 +161,7 @@ MonoBehaviour:
   _patrolWaiting: 1
   _totalWaitTime: 1.5
   _switchProbability: 0.12
-  _patrolPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _patrolPoints: []
 --- !u!114 &4496405404856569811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,9 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c57d1cbd0d0b2440bc3621caecc2626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playSound: {fileID: 0}
+  playSound: {fileID: 4114172945596731457}
   ShootingSound: {fileID: 8300000, guid: 6921c9cb2f0fea044aae33982667b518, type: 3}
-  bulletDestroyPig: {fileID: 8300000, guid: 706cc8b33d6049641b9888e5778a3007, type: 3}
   bulletPrefab: {fileID: 5082221112435382305, guid: 46a939526265b8741902271295ac600f,
     type: 3}
   muzzle:
@@ -193,7 +185,7 @@ MonoBehaviour:
   - {fileID: 2112950068533489766}
   forwardForce: 15
   muzzleFlash: {fileID: 0}
-  bulletsPerSec: 2
+  bulletsPerSec: 8
   bulletLife: 4
   bulletSize: 1
 --- !u!114 &2340756037948189618
@@ -212,7 +204,6 @@ MonoBehaviour:
   actualPidgeon: {fileID: 0}
   idleModel: {fileID: 0}
   activeModel: {fileID: 0}
-  smooth: 200
 --- !u!195 &9127675484224437679
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -256,20 +247,6 @@ MonoBehaviour:
   particles: {fileID: 0}
   rotations: {fileID: 0}
   audio: {fileID: 0}
---- !u!114 &6468536632304540162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3547660575813509027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e3a70435afa6144ab056f9dc773446b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationTime: 1
-  threshold: 1.5
 --- !u!82 &4114172945596731457
 AudioSource:
   m_ObjectHideFlags: 0

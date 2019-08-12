@@ -15,21 +15,10 @@ public class EnemyAttack : MonoBehaviour
 	public GameObject idleModel;
 	public GameObject activeModel;
 
-	public float smooth = 200f;
-	private Quaternion targetRotation;
-
 	public void targetFound()
 	{
 		if (gameObject.name == "Enemy(Pidgeon)")
 		{
-			Debug.Log("BirdieIn");
-			actualPidgeon = GameObject.Find("PidgeonModel");
-			//activeModel = GameObject.Find("SHIT_HAWK_ATTACK_TEST");
-			//idleModel = GameObject.Find("SHIT_HAWK_IDLE_TEST");
-			targetRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
-
-			actualPidgeon.transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smooth * Time.deltaTime);
-
 			activeModel.SetActive(true);
 			idleModel.SetActive(false);
 			//activeModel.transform.localEulerAngles.Set(0,180,0);
@@ -47,15 +36,6 @@ public class EnemyAttack : MonoBehaviour
 	{
 		if (gameObject.name == "Enemy(Pidgeon)")
 		{
-			Debug.Log("BirdieOut");
-			actualPidgeon = GameObject.Find("PidgeonModel");
-			//activeModel = GameObject.Find("SHIT_HAWK_ATTACK_TEST");
-			//idleModel = GameObject.Find("SHIT_HAWK_IDLE_TEST");
-
-			targetRotation = Quaternion.LookRotation(transform.forward, Vector3.up);
-
-			actualPidgeon.transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smooth * Time.deltaTime);
-
 			idleModel.SetActive(true);
 			activeModel.SetActive(false);
 		}

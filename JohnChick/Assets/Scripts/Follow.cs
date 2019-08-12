@@ -5,18 +5,12 @@ using UnityEngine;
 public class Follow : MonoBehaviour
 {
     [HideInInspector] public Transform target;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        transform.position = target.position;
-        transform.rotation = target.rotation;
-    }
+    [SerializeField] private Vector3 offset;
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = target.position;
+        transform.position = target.position + offset;
         transform.rotation = target.rotation;
     }
 }

@@ -7,7 +7,6 @@ public class Shooting : MonoBehaviour
 {
     public AudioSource playSound;
     public AudioClip ShootingSound;
-    public AudioClip bulletDestroyPig;
 
     [Header("Shooting")]
     [SerializeField] private GameObject bulletPrefab;
@@ -47,14 +46,18 @@ public class Shooting : MonoBehaviour
             bullet.transform.position = muzzle[curMuzzle].position;
             bullet.transform.forward = muzzle[curMuzzle].forward;
             bullet.transform.localScale *= bulletSize;
+
             if (!bullet.CompareTag("PlayerBullet"))
             {
                 bulletTimeScale = GetComponent<FastAndSlowEffect>().timeScale;
                 bullet.GetComponent<FastAndSlowEffect>().timeScale = bulletTimeScale;
             }
+
             bullet.GetComponent<Rigidbody>().AddForce(new Vector3(transform.forward.x * forwardForce * bulletTimeScale, 0, transform.forward.z * forwardForce * bulletTimeScale), ForceMode.Impulse);
-            playSound.clip = bulletDestroyPig;
+            
+            playSound.clip = ShootingSound;
             playSound.Play();
+
             Destroy(bullet, bulletLife);
 
             CameraShaker.Instance.ShakeOnce(1, 2, 0.1f, 0.15f);

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f7ce3b865a9c0894fa8835b9bb3bdc81
+guid: db16899c27f1df7418e834f6a4066c6e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -9,9 +9,10 @@ ModelImporter:
     2100002: 'Material #38'
     2100004: 'Material #37'
     2100006: 'Material #50'
+    2100008: 'Material #91'
     2300000: //RootNode
     3300000: //RootNode
-    4300000: SHITHAWK_IDLE
+    4300000: SHIT_HAWK_ATTACK
   externalObjects: {}
   materials:
     importMaterials: 1

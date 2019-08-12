@@ -19,10 +19,12 @@ public class AddEnemy : MonoBehaviour
 
         GetComponent<Follow>().target = prefab.transform;
         GetComponentInChildren<HoppingMovement>().speedSourceNav = prefab.GetComponent<NavMeshAgent>();
-
-        NPCSimplePatrol npcSimplePatrol = prefab.GetComponent<NPCSimplePatrol>();
-        Waypoints[] route = patrolRoute.GetComponentsInChildren<Waypoints>();
-
-        npcSimplePatrol._patrolPoints = route;
+        
+        if (patrolRoute)
+        {
+            NPCSimplePatrol npcSimplePatrol = prefab.GetComponent<NPCSimplePatrol>();
+            Waypoints[] route = patrolRoute.GetComponentsInChildren<Waypoints>();
+            npcSimplePatrol._patrolPoints = route;
+        }
     }
 }
