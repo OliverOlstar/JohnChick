@@ -6,7 +6,7 @@ public class FastAndSlow : MonoBehaviour
 {
     public AudioSource playsound;
     public AudioClip splash;
-    [SerializeField] private float fastAndSlowScale = 1;
+    [SerializeField] private int fastAndSlowScale = 1;
     [SerializeField] private GameObject effect;
 
     private void Start()
@@ -28,8 +28,6 @@ public class FastAndSlow : MonoBehaviour
             fx.position = transform.position;
             playEffect();
             Destroy(this.gameObject);
-         
-
         }
     }
     private void playEffect()
