@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour
 {
     public Transform _target;
-    private float followHeight = 15f;
+    [SerializeField] private float followHeight = 15f;
     [SerializeField] private float followDampening = 1f;
     [SerializeField] private float followOffset = 0f;
 

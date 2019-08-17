@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
 {
     // Creates a class variable to keep track of 'GameManager' instance
     static GameManager _instance = null;
-    public Text scoreText;
+    [SerializeField] private Text scoreText;
+    [SerializeField] private Slider loadingBar;
 
     public int currentLevel ;
     public int lastLevel;
@@ -33,98 +34,53 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-        // Check if 'Escape' was pressed
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-        //else if (Input.GetKeyDown(KeyCode.P))
-        //{
-        //    Pause();
-        //}
-        if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            if (SceneManager.GetActiveScene().name == "EndGame")
-            {
-                QuitGame();
-            }
-            else
-            {
-                NextLevel();
-            }
-        }
-        if (SceneManager.GetActiveScene().name == "Title Screen")
-        {
-            Button[] buttons = FindObjectOfType<Canvas>().GetComponentsInChildren<Button>();
-            buttons[0].onClick.AddListener(StartGame);
-            buttons[1].onClick.AddListener(QuitGame);
-        }
-        if (SceneManager.GetActiveScene().name == "Failed")
-        {
-            Button[] buttons = FindObjectOfType<Canvas>().GetComponentsInChildren<Button>();
-            //buttons[0].onClick.AddListener(Respawn);
-            buttons[1].onClick.AddListener(QuitGame);
-        }
-        else if (SceneManager.GetActiveScene().name == "End Game")
-        {
-            Button[] buttons = FindObjectOfType<Canvas>().GetComponentsInChildren<Button>();
-            buttons[0].onClick.AddListener(ToTitle);
-            buttons[1].onClick.AddListener(QuitGame);
-            Text [] texts = FindObjectOfType<Canvas>().GetComponentsInChildren<Text>();
-            for (int i = 0; i < texts.Length; i++)
-            {
-                if (texts[i].tag == "Score")
-                {
-                    scoreText = texts[i];
-                    scoreText.text = "";
-                    break;
-                }
-                else
-                    Debug.Log("Not Score");
-            }
-        }
-        if (SceneManager.GetActiveScene().name == "Level" + currentLevel)
-        {
-            if (!scoreText)
-            {
-                //Canvas canvas = FindObjectOfType<Canvas>();
-                //if (!canvas)
-                //    Debug.Log("No Canvas");
-                ////Text[] texts = canvas.GetComponentsInChildren<Text>();
-                ////if (!texts[0])
-                //    Debug.Log("No text");
-                //for (int i = 0; i < texts.Length; i++)
-                //{
-                //    if (texts[i].tag == "Score")
-                //    {
-                //        scoreText = texts[i];
-                //        scoreText.text = "";
-                //        break;
-                //    }
-                //    else
-                //        Debug.Log("Not Score");
-                //}
-            }
-        }
-    }
-
     public static GameManager instance
     {
         get { return _instance; }   // can also use just 'get;'
         set { _instance = value; }  // can also use just 'set;'
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        // Check if 'Escape' was pressed
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+
     public void StartGame()
     {
+        //Switch John Chick Image
         RawImage[] titleRawImg = FindObjectOfType<Canvas>().GetComponentsInChildren<RawImage>();
         titleRawImg[1].enabled = false;
         titleRawImg[2].enabled = true;
+        
+        //Show load bar
+        if (loadingBar && !loadingBar.gameObject.activeSelf)
+            loadingBar.gameObject.SetActive(true);
+
+        //Start loading next scene
         currentLevel = 1;
-        SceneManager.LoadScene("Level1");
+        StartCoroutine("LoadAsynchronously", currentLevel);
+    }
+
+    IEnumerator LoadAsynchronously(int sceneIndex)
+    {
+        //Load target scene
+        AsyncOperation operation = SceneManager.LoadSceneAsync("Level1");
+
+        //Display load progress
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / 0.9f);
+
+            if (loadingBar)
+                loadingBar.value = progress;
+
+            yield return null;
+        }
     }
 
     public void NextLevel()
@@ -174,11 +130,11 @@ public class GameManager : MonoBehaviour
 
     //}
 
-    public void Resume()
-    {
-        Time.timeScale = 1;
-        RawImage[] buttonImg = FindObjectOfType<Canvas>().GetComponentsInChildren<RawImage>();
-        buttonImg[0].enabled = false;
-        buttonImg[1].enabled = false;
-    }
+    //public void Resume()
+    //{
+    //    Time.timeScale = 1;
+    //    RawImage[] buttonImg = FindObjectOfType<Canvas>().GetComponentsInChildren<RawImage>();
+    //    buttonImg[0].enabled = false;
+    //    buttonImg[1].enabled = false;
+    //}
 }
