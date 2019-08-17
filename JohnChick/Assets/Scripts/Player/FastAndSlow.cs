@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class FastAndSlow : MonoBehaviour
 {
-    [SerializeField] private AudioClip splash;
-    [SerializeField] private float fastAndSlowScale = 1;
+    public AudioSource playsound;
+    public AudioClip splash;
+    [SerializeField] private int fastAndSlowScale = 1;
     [SerializeField] private GameObject effect;
     [SerializeField] private GameObject soundPlayer;
 

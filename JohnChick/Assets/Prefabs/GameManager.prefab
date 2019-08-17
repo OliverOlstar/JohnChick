@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 17}
   - component: {fileID: 20}
-  - component: {fileID: 19}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -48,18 +47,6 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   currentLevel: 1
   lastLevel: 5
---- !u!114 &19
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff29fa5c2329d304bb63a4606c8e5ccd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &16
 GameObject:
   m_ObjectHideFlags: 0
