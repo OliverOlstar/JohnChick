@@ -37,7 +37,7 @@ public class FastAndSlowEffect : MonoBehaviour
     private Color slowColour = Color.cyan;
     [SerializeField] private Material fastMaterial;
     private Color fastColour = Color.red;
-    [SerializeField] private Color defaultColour = Color.white;
+    [SerializeField] private Color[] defaultColours;
 
     [Space]
     [SerializeField] private float blinkSpeed = 0.6f;
@@ -92,6 +92,7 @@ public class FastAndSlowEffect : MonoBehaviour
             DefaultAudioVolume = audioSource.volume;
         }
 
+        //Colors
         if (fastMaterial != null)
             fastColour = fastMaterial.color;
 
@@ -99,8 +100,9 @@ public class FastAndSlowEffect : MonoBehaviour
             slowColour = slowMaterial.color;
 
         renderers = GetComponentsInChildren<MeshRenderer>();
-        foreach(Renderer render in renderers)
-            render.material.color = defaultColour;
+        defaultColours = new Color[renderers.Length];
+        for (int i = 0; i < renderers.Length; i++)
+            defaultColours[i] = renderers[i].material.color;
     }
 
     public void NewTimeScale(int pTimeChange)
@@ -201,7 +203,7 @@ public class FastAndSlowEffect : MonoBehaviour
         //Loop to change Colour
         while ((timer <= 1 && direction == 1) || (timer > 0 && direction == -1))
         {
-            ChangeColor(timer, renderers, targetColour, defaultColour);
+            ChangeColor(timer, renderers, targetColour, defaultColours);
 
             timer += Time.deltaTime * speed * direction;
             yield return null;
@@ -215,11 +217,11 @@ public class FastAndSlowEffect : MonoBehaviour
             StartCoroutine("ChangeColour");
     }
 
-    private void ChangeColor(float t, MeshRenderer[] rendererss, Color targetColour, Color startingColour)
+    private void ChangeColor(float t, MeshRenderer[] rendererss, Color targetColour, Color[] startingColours)
     {
         for (int i = 0; i < rendererss.Length; i++)
         {
-            rendererss[i].material.color = (targetColour * t) + (startingColour * (1 - t));
+            rendererss[i].material.color = (targetColour * t) + (startingColours[i] * (1 - t));
         }
     }
 }

@@ -6,18 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class DeadZone : MonoBehaviour
 {
-	public GameManager gmanage;
-    // Start is called before the first frame update
-    void Start()
-    {
-		//gmanage = GetComponent<GameManager>();
-    }
-
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Player"))
         {
-            gmanage.Respawn();
+            other.GetComponent<PlayerDeath>().KillPlayer(Vector3.zero);
 		}
 	}
+
+    void OnDrawGizmosSelected()
+    {
+        // Draw a semitransparent blue cube at the transforms position
+        Gizmos.color = new Color(1, 0, 0, 0.5f);
+        Gizmos.DrawCube(transform.position, transform.localScale);
+    }
 }

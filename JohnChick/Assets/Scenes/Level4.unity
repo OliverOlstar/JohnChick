@@ -1140,17 +1140,17 @@ PrefabInstance:
     - target: {fileID: 7424524131602436906, guid: 77bc61a2ba387884aa5cfef78a5a3b39,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.945225
+      value: -12.2
       objectReference: {fileID: 0}
     - target: {fileID: 7424524131602436906, guid: 77bc61a2ba387884aa5cfef78a5a3b39,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -2.9
       objectReference: {fileID: 0}
     - target: {fileID: 7424524131602436906, guid: 77bc61a2ba387884aa5cfef78a5a3b39,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.196088
+      value: 7.42
       objectReference: {fileID: 0}
     - target: {fileID: 7424524131602436906, guid: 77bc61a2ba387884aa5cfef78a5a3b39,
         type: 3}
@@ -1191,6 +1191,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7424524131602436906, guid: 77bc61a2ba387884aa5cfef78a5a3b39,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 39.154278
+      objectReference: {fileID: 0}
+    - target: {fileID: 7424524131602436906, guid: 77bc61a2ba387884aa5cfef78a5a3b39,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 67.64184
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7365433694649376284, guid: 77bc61a2ba387884aa5cfef78a5a3b39, type: 3}
@@ -57175,8 +57185,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e3a70435afa6144ab056f9dc773446b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationTime: 1
-  threshold: 1.5
 --- !u!114 &1379467338063663528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57190,14 +57198,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeScale: 1
-  rigidbody: {fileID: 0}
+  rb: {fileID: 0}
   navMeshAgent: {fileID: 0}
   movingPlatform: {fileID: 5652170985494124679}
   speedingPlatform: {fileID: 0}
   fan: {fileID: 0}
   particles: {fileID: 0}
   rotations: {fileID: 0}
-  audio: {fileID: 0}
+  audioSource: {fileID: 0}
+  slowMaterial: {fileID: 0}
+  fastMaterial: {fileID: 0}
+  defaultColours: []
+  blinkSpeed: 0.6
+  blinkReturnSpeed: 1.1
 --- !u!4 &1555064772490982517
 Transform:
   m_ObjectHideFlags: 0
@@ -57321,14 +57334,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeScale: 1
-  rigidbody: {fileID: 0}
+  rb: {fileID: 0}
   navMeshAgent: {fileID: 0}
   movingPlatform: {fileID: 9033482338535169628}
   speedingPlatform: {fileID: 0}
   fan: {fileID: 0}
   particles: {fileID: 0}
   rotations: {fileID: 0}
-  audio: {fileID: 0}
+  audioSource: {fileID: 0}
+  slowMaterial: {fileID: 0}
+  fastMaterial: {fileID: 0}
+  defaultColours: []
+  blinkSpeed: 0.6
+  blinkReturnSpeed: 1.1
 --- !u!114 &3117516122090049753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57341,8 +57359,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e3a70435afa6144ab056f9dc773446b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationTime: 1
-  threshold: 1.5
 --- !u!65 &3394003270826994170
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57491,14 +57507,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeScale: 1
-  rigidbody: {fileID: 0}
+  rb: {fileID: 0}
   navMeshAgent: {fileID: 0}
   movingPlatform: {fileID: 7738494062004768901}
   speedingPlatform: {fileID: 0}
   fan: {fileID: 0}
   particles: {fileID: 0}
   rotations: {fileID: 0}
-  audio: {fileID: 0}
+  audioSource: {fileID: 0}
+  slowMaterial: {fileID: 0}
+  fastMaterial: {fileID: 0}
+  defaultColours: []
+  blinkSpeed: 0.6
+  blinkReturnSpeed: 1.1
 --- !u!114 &4429962512970014208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57511,8 +57532,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e3a70435afa6144ab056f9dc773446b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationTime: 1
-  threshold: 1.5
 --- !u!65 &4629811131553427244
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57538,8 +57557,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e3a70435afa6144ab056f9dc773446b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationTime: 1
-  threshold: 1.5
 --- !u!114 &5277965727326383874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57800,14 +57817,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeScale: 1
-  rigidbody: {fileID: 0}
+  rb: {fileID: 0}
   navMeshAgent: {fileID: 0}
   movingPlatform: {fileID: 305444426884290131}
   speedingPlatform: {fileID: 0}
   fan: {fileID: 0}
   particles: {fileID: 0}
   rotations: {fileID: 0}
-  audio: {fileID: 0}
+  audioSource: {fileID: 0}
+  slowMaterial: {fileID: 0}
+  fastMaterial: {fileID: 0}
+  defaultColours: []
+  blinkSpeed: 0.6
+  blinkReturnSpeed: 1.1
 --- !u!114 &6847405300452778459
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -479,6 +479,7 @@ MonoBehaviour:
   muzzle:
   - {fileID: 1603168293517002457}
   forwardForce: 15
+  bulletTimeScale: 1
   muzzleFlash: {fileID: 0}
   bulletsPerSec: 0.75
   bulletLife: 4
@@ -608,14 +609,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeScale: 1
-  rigidbody: {fileID: 0}
+  rb: {fileID: 0}
   navMeshAgent: {fileID: 0}
   movingPlatform: {fileID: 0}
   speedingPlatform: {fileID: 0}
   fan: {fileID: 0}
   particles: {fileID: 0}
   rotations: {fileID: 0}
-  audio: {fileID: 0}
+  audioSource: {fileID: 0}
+  slowMaterial: {fileID: 0}
+  fastMaterial: {fileID: 0}
+  defaultColour: {r: 1, g: 1, b: 1, a: 0.19607843}
+  blinkSpeed: 0.6
+  blinkReturnSpeed: 1.1
 --- !u!1 &7154150803064905630
 GameObject:
   m_ObjectHideFlags: 0
