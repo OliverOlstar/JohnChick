@@ -5188,8 +5188,9 @@ MonoBehaviour:
   particles: {fileID: 4388105679647993580}
   rotations: {fileID: 8400753232143552535}
   audioSource: {fileID: 0}
-  slowColour: {r: 0, g: 0.8448343, b: 1, a: 0}
-  fastColour: {r: 1, g: 0.25943398, b: 0.25943398, a: 0}
+  slowMaterial: {fileID: 2100000, guid: c991024a845faf048a7b5a008e51c351, type: 2}
+  fastMaterial: {fileID: 2100000, guid: d5aff4b72aaa8ae4097e574d1689ad3a, type: 2}
+  defaultColour: {r: 1, g: 1, b: 1, a: 1}
   blinkSpeed: 0.6
   blinkReturnSpeed: 1.1
 --- !u!23 &594491750426715903
