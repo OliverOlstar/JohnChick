@@ -531,7 +531,6 @@ GameObject:
   - component: {fileID: 2693677273828123262}
   - component: {fileID: 708781605623459111}
   - component: {fileID: 951651273366520594}
-  - component: {fileID: 3804589799090859064}
   - component: {fileID: 4207250097222046788}
   - component: {fileID: 2652481875392905270}
   m_Layer: 0
@@ -570,14 +569,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeScale: 1
-  rigidbody: {fileID: 0}
+  rb: {fileID: 0}
   navMeshAgent: {fileID: 0}
   movingPlatform: {fileID: 0}
   speedingPlatform: {fileID: 3892022885786510132}
   fan: {fileID: 0}
   particles: {fileID: 0}
   rotations: {fileID: 0}
-  audio: {fileID: 2652481875392905270}
+  audioSource: {fileID: 0}
+  slowMaterial: {fileID: 2100000, guid: c991024a845faf048a7b5a008e51c351, type: 2}
+  fastMaterial: {fileID: 2100000, guid: d5aff4b72aaa8ae4097e574d1689ad3a, type: 2}
+  defaultColour: {r: 1, g: 1, b: 1, a: 1}
+  blinkSpeed: 0.6
+  blinkReturnSpeed: 1.1
 --- !u!23 &951651273366520594
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -615,20 +619,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &3804589799090859064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3357584835466547809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e3a70435afa6144ab056f9dc773446b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationTime: 1
-  threshold: 1.5
 --- !u!65 &4207250097222046788
 BoxCollider:
   m_ObjectHideFlags: 0

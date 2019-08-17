@@ -14,7 +14,7 @@ public class Shooting : MonoBehaviour
     [SerializeField] private float forwardForce;
 
     private int curMuzzle = 0;
-    float bulletTimeScale = 1.0f;
+    [SerializeField] private int bulletTimeScale = 1;
 
     public ParticleSystem muzzleFlash;
 
