@@ -10,6 +10,6 @@ public class Rotating : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(rotDir, rotSpeed, Space.Self);
+        transform.Rotate(rotDir, rotSpeed);
     }
 }

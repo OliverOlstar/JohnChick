@@ -4,31 +4,37 @@ using UnityEngine;
 
 public class ChickenSave : MonoBehaviour
 {
-
-	public float angle;
 	public float force;
-	Rigidbody rb;
     public int me = 0;
 
-	private void OnTriggerEnter(Collider other)
+	private Rigidbody rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    private void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Player"))
 		{
-			Vector3 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
-			rb.AddForce(dir * force);
             ScoreCont._score.Add(me);
-			Destroy(gameObject, 3);
+            StartCoroutine("MoveUp");
+			Destroy(gameObject, 1);
 		}
 	}
-    
-	void Start()
-    {
-		rb = GetComponent<Rigidbody>();
-	}
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+        StopCoroutine("MoveUp");
+    }
+
+    private IEnumerator MoveUp()
+    {
+        while (transform.position.y < 50)
+        {
+            yield return null;
+            transform.position += Vector3.up * force * Time.deltaTime;
+        }
     }
 }
